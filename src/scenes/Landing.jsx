@@ -31,7 +31,7 @@ const Landing = ({ setSelectedPage }) => {
         ) : (
           <img
           alt="profile"
-          className="z-10 w-full max-w-[400px] md:max-w-[600px]"
+          className="z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full"
           src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
             // src="assets/profile-image.png"
           />

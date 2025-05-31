@@ -26,13 +26,14 @@ const Landing = ({ setSelectedPage }) => {
               // src="assets/IMG-20240227-WA0007.jpg"
               // src="./assets/ReadyPlayerMe-Avatar.jpeg"
               // src="./assets/ReadyPlayerMe-Avatar.png"
-            />
+              />
           </div>
         ) : (
           <img
-            alt="profile"
-            className="z-10 w-full max-w-[400px] md:max-w-[600px]"
-            src="assets/profile-image.png"
+          alt="profile"
+          className="z-10 w-full max-w-[400px] md:max-w-[600px]"
+          src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
+            // src="assets/profile-image.png"
           />
         )}
       </div>

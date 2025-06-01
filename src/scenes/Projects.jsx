@@ -15,7 +15,7 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title,url }) => {
+const Project = ({ title,url,desc }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
     bg-gray-300 z-30 flex flex-col justify-center items-center text-center p-16 text-blue-900 cursor-pointer rounded-lg`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
@@ -25,8 +25,7 @@ const Project = ({ title,url }) => {
       <a href={url} target="_blank" className={overlayStyles}>
         <p className="text-2xl font-playfair">{title}</p>
         <p className="mt-7">
-          Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla
-          porttitor accumsan tincidunt.
+          {desc}
         </p>
       </a>
       <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} className=" object-cover rounded-lg" />
@@ -78,8 +77,8 @@ const Projects = () => {
           >
             BEAUTIFUL USER INTERFACES
           </div>
-          <Project title="YouTube Clone" url={"https://dev-yt.netlify.app/"} />
-          <Project title="Netflix GPT" url={"https://dev-ntflx.netlify.app/"} />
+          <Project title="YouTube Clone" url={"https://dev-yt.netlify.app/"}  desc={"This is a responsive clone of Youtube which uses Live Youtube Data Api and have features like search functionality, debouncing of 200ms, colour theme switch."}/>
+          <Project title="Netflix GPT" url={"https://dev-ntflx.netlify.app/"} desc={"This is a kind of Netflix(responsive) which has feature of Ai search"}/>
 
           {/* ROW 2 */}
           <Project title="Project 3" />

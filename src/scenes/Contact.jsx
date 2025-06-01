@@ -23,7 +23,7 @@ const Contact = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{  amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, x: 50 },
@@ -33,7 +33,7 @@ const Contact = () => {
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-yellow">CONTACT ME</span> TO GET STARTED
+            <span className="text-[#FDCC49]">CONTACT ME</span> TO GET STARTED
           </p>
           <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />
@@ -46,7 +46,7 @@ const Contact = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{  amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -55,13 +55,13 @@ const Contact = () => {
           className="basis-1/2 flex justify-center"
         >
           {/* <img src="../assets/contact-image.jpeg" alt="contact" /> */}
-          <img src="../assets/ReadyPlayerMe-Avatar.jpeg" alt="contact" className="w-[400px] rounded-lg border border-white"/>
+          <img src="../assets/ReadyPlayerMe-Avatar.jpeg" alt="contact" className="w-[380px]  rounded-lg border border-white"/>
         </motion.div>
 
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{  amount: 0.5 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -76,7 +76,7 @@ const Contact = () => {
             method="POST"
           >
             <input
-              className="w-full border border-white rounded-lg font-semibold placeholder-opaque-black p-3"
+              className="w-full border border-white rounded-lg font-semibold  p-3"
               type="text"
               placeholder="NAME"
               {...register("name", {
@@ -85,14 +85,14 @@ const Contact = () => {
               })}
             />
             {errors.name && (
-              <p className="text-red mt-1">
+              <p className="text-[#DC4492] mt-1">
                 {errors.name.type === "required" && "This field is required."}
                 {errors.name.type === "maxLength" && "Max length is 100 char."}
               </p>
             )}
 
             <input
-              className="w-full border border-white rounded-lg font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full border border-white rounded-lg font-semibold  p-3 mt-5"
               type="text"
               placeholder="EMAIL"
               {...register("email", {
@@ -101,14 +101,14 @@ const Contact = () => {
               })}
             />
             {errors.email && (
-              <p className="text-red mt-1">
+              <p className="text-[#DC4492] mt-1">
                 {errors.email.type === "required" && "This field is required."}
                 {errors.email.type === "pattern" && "Invalid email address."}
               </p>
             )}
 
             <textarea
-              className="w-full border border-white rounded-lg font-semibold placeholder-opaque-black p-3 mt-5"
+              className="w-full border border-white rounded-lg font-semibold  p-3 mt-5"
               name="message"
               placeholder="MESSAGE"
               rows="4"
@@ -119,7 +119,7 @@ const Contact = () => {
               })}
             />
             {errors.message && (
-              <p className="text-red mt-1">
+              <p className="text-[#DC4492] mt-1">
                 {errors.message.type === "required" &&
                   "This field is required."}
                 {errors.message.type === "maxLength" &&

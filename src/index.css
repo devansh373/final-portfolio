@@ -9,4 +9,9 @@
      background-color: #010026;
      /* @apply text-white; */
     }
+    .bg-content-brush{
+      
+      background-image: url('./assets/brush.png');
+      background-size: contain;
+    }
   }

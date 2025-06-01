@@ -5,7 +5,7 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.1,
     },
   },
 };
@@ -17,12 +17,12 @@ const projectVariant = {
 
 const Project = ({ title,url,desc }) => {
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-    bg-gray-300 z-30 flex flex-col justify-center items-center text-center p-16 text-blue-900 cursor-pointer rounded-lg`;
+     z-30 flex flex-col justify-center items-center text-center p-16 cursor-pointer rounded-lg`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
 
   return (
     <motion.div variants={projectVariant} className="relative">
-      <a href={url} target="_blank" className={overlayStyles}>
+      <a href={url} target="_blank" className={`${overlayStyles} text-[#2CBCE9] bg-[#ededed]`}>
         <p className="text-2xl font-playfair">{title}</p>
         <p className="mt-7">
           {desc}
@@ -41,7 +41,7 @@ const Projects = () => {
         className="md:w-2/5 mx-auto text-center"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{  amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, y: -50 },
@@ -50,7 +50,7 @@ const Projects = () => {
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-red-500">PRO</span>JECTS
+            <span className="text-[#DC4492]">PRO</span>JECTS
           </p>
           <div className="flex justify-center mt-5">
             <LineGradient width="w-2/3" />
@@ -68,11 +68,11 @@ const Projects = () => {
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{  amount: 0.2 }}
         >
           {/* ROW 1 */}
           <div
-            className="flex justify-center  text-center items-center p-10 bg-red-600
+            className="flex justify-center  text-center items-center p-10 bg-[#922d61]
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-medium"
           >
             BEAUTIFUL USER INTERFACES
@@ -89,7 +89,7 @@ const Projects = () => {
           <Project title="Project 6" />
           <Project title="Project 7" />
           <div
-            className="flex justify-center text-center items-center p-10 bg-blue-500
+            className="flex justify-center text-center items-center p-10 bg-[#237791]
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
           >
             SMOOTH USER EXPERIENCE

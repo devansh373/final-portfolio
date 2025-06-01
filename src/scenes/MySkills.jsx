@@ -13,7 +13,7 @@ const MySkills = () => {
           className="md:w-1/3"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, x: -50 },
@@ -24,22 +24,31 @@ const MySkills = () => {
             MY <span className="text-red-500">SKILLS</span>
           </p>
           <LineGradient width="w-1/3" />
-          <p className="mt-10 text-2xl mb-7">
-            I often code  in...
-          </p>
+          <p className="mt-10 text-2xl mb-7">I often code in...</p>
         </motion.div>
 
         <div className="mt-16 md:mt-0">
           {isAboveLarge ? (
             <div
               className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
-              before:w-full before:h-full before:border-2 before:border-blue before:z-[-1]"
+              before:w-full before:h-full before:border-2 before:border-[#2CBCE9] before:z-[-1]"
             >
-              <img
-                alt="skills"
-                className="z-10"
-                src="assets/skills-image.png"
-              />
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ amount: 0.5 }}
+                transition={{ duration: 1 }}
+                variants={{
+                  hidden: { x: -40, y: -40 },
+                  visible: { x: 0, y: 0 },
+                }}
+              >
+                <img
+                  alt="skills"
+                  className="z-10"
+                  src="assets/skills-image.png"
+                />
+              </motion.div>
             </div>
           ) : (
             <img alt="skills" className="z-10" src="assets/skills-image.png" />
@@ -54,7 +63,7 @@ const MySkills = () => {
           className="md:w-1/3 mt-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -66,11 +75,9 @@ const MySkills = () => {
               <p className="font-playfair font-semibold text-5xl w-[90px]">
                 {reactSvg}
               </p>
-              <p className="font-playfair font-semibold text-3xl mt-3">
-                React
-              </p>
+              <p className="font-playfair font-semibold text-3xl mt-3">React</p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-blue absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-[#2CBCE9] absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
             A auctor pharetra hendrerit mattis amet etiam interdum platea. Est
@@ -84,7 +91,7 @@ const MySkills = () => {
           className="md:w-1/3 mt-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -93,13 +100,14 @@ const MySkills = () => {
         >
           <div className="relative h-32">
             <div className="z-10">
-              <p className="font-playfair font-semibold text-2xl w-[90px]">{
-            jsSvg}</p>
+              <p className="font-playfair font-semibold text-2xl w-[90px]">
+                {jsSvg}
+              </p>
               <p className="font-playfair font-semibold text-3xl mt-2 ">
                 Javascript
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-red absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-[#FDAD95] absolute -right-15 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
             Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
@@ -113,7 +121,7 @@ const MySkills = () => {
           className="md:w-1/3 mt-10"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           transition={{ delay: 0.4, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -122,12 +130,14 @@ const MySkills = () => {
         >
           <div className="relative h-32">
             <div className="z-10">
-              <p className="font-playfair font-semibold text-5xl w-[90px]">{tailwindSvg}</p>
+              <p className="font-playfair font-semibold text-5xl w-[90px]">
+                {tailwindSvg}
+              </p>
               <p className="font-playfair font-semibold text-3xl mt-3">
                 Tailwind
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-yellow absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2 md:w-3/4 h-32 bg-[#44a8b3] absolute -right-10 top-0 z-[-1]" />
           </div>
           <p className="mt-5">
             Accumsan eu fringilla nisi, eget. Vitae, eget ut id proin arcu in

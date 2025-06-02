@@ -1,6 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Contact = () => {
   const {
@@ -9,11 +10,24 @@ const Contact = () => {
     formState: { errors },
   } = useForm();
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [messageOnSubmit, setMessageOnSubmit] = useState("");
+  useEffect(() => {
+    (name || email || message) && setMessageOnSubmit("");
+  }, [name, email, message]);
   const onSubmit = async (e) => {
-    console.log("~ e", e);
+    // console.log("~ e", e);
     const isValid = await trigger();
     if (!isValid) {
       e.preventDefault();
+    } else {
+      // setName("");
+      // setEmail("");
+      // setMessage("");
+      setMessageOnSubmit("Thank You For Contacting!");
+      // console.log(isValid)
     }
   };
 
@@ -23,7 +37,7 @@ const Contact = () => {
       <motion.div
         initial="hidden"
         whileInView="visible"
-        viewport={{  amount: 0.5 }}
+        viewport={{ amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, x: 50 },
@@ -46,7 +60,7 @@ const Contact = () => {
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{  amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           transition={{ duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -55,13 +69,17 @@ const Contact = () => {
           className="basis-1/2 flex justify-center"
         >
           {/* <img src="../assets/contact-image.jpeg" alt="contact" /> */}
-          <img src="../assets/ReadyPlayerMe-Avatar.jpeg" alt="contact" className="w-[380px]  rounded-lg border border-white"/>
+          <img
+            src="../assets/ReadyPlayerMe-Avatar.jpeg"
+            alt="contact"
+            className="w-[380px]  rounded-lg border border-white"
+          />
         </motion.div>
 
         <motion.div
           initial="hidden"
           whileInView="visible"
-          viewport={{  amount: 0.5 }}
+          viewport={{ amount: 0.5 }}
           transition={{ delay: 0.2, duration: 0.5 }}
           variants={{
             hidden: { opacity: 0, y: 50 },
@@ -72,7 +90,7 @@ const Contact = () => {
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/e8a5bdfa807605332f809e5656e27c6e"
+            action="https://formsubmit.co/14ed025d7047f2fb8c1a57b30ef1c631 "
             method="POST"
           >
             <input
@@ -83,6 +101,8 @@ const Contact = () => {
                 required: true,
                 maxLength: 100,
               })}
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
             {errors.name && (
               <p className="text-[#DC4492] mt-1">
@@ -99,6 +119,8 @@ const Contact = () => {
                 required: true,
                 pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
               })}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
             {errors.email && (
               <p className="text-[#DC4492] mt-1">
@@ -117,6 +139,8 @@ const Contact = () => {
                 required: true,
                 maxLength: 2000,
               })}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
             {errors.message && (
               <p className="text-[#DC4492] mt-1">
@@ -133,6 +157,7 @@ const Contact = () => {
             >
               Send a message
             </button>
+            <p className="text-2xl text-[#49fdf1]">{messageOnSubmit}</p>
           </form>
         </motion.div>
       </div>

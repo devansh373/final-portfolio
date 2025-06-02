@@ -6,7 +6,7 @@ const Testimonials = () => {
     <section id="testimonials" className="pt-32 pb-16">
       {/* HEADING */}
       <motion.div
-        className="md:w-1/3 text-center md:text-left"
+        className="lg:w-1/3 text-center lg:text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{  amount: 0.5 }}
@@ -21,15 +21,14 @@ const Testimonials = () => {
         </p>
         <LineGradient width="mx-auto w-2/5" />
         <p className="mt-10">
-          Here's What People are Saying About My Work. Aliquam aliquet integer
-          ut fames odio in at. At magna ornare dictum lectus.
+          Here's What People are Saying About My Work.
         </p>
       </motion.div>
 
       {/* TESTIMONIALS */}
-      <div className="md:flex md:justify-between gap-8">
+      <div className="lg:flex lg:justify-between gap-8">
         <motion.div
-          className="mx-auto relative bg-[#2CBCE9] max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
+          className="mx-auto relative bg-[#2CBCE9] max-w-[400px] h-[350px] flex flex-col justify-end p-7 mt-48
             before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-[''] before:bg-[url('./assets/person-1.png')] before:bg-no-repeat before:bg-contain before:w-full before:h-[70%]"
           initial="hidden"
           whileInView="visible"
@@ -42,12 +41,12 @@ const Testimonials = () => {
         >
           <p className="font-playfair text-6xl">“</p>
           <p className="text-center text-xl">
-            A auctor pharetra hendrerit mattis amet etiam interdum platea.
+            Working with Devansh was smooth and professional. He delivered the project on time, with clean code and great attention to detail.
           </p>
         </motion.div>
 
         <motion.div
-          className="mx-auto relative bg-[#DC4492] max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
+          className="mx-auto relative bg-[#DC4492] max-w-[400px] h-[350px] flex flex-col justify-end p-7 mt-48
             before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-[''] before:bg-[url('./assets/person-2.png')] before:bg-no-repeat before:bg-contain before:w-full before:h-[70%]"
           initial="hidden"
           whileInView="visible"
@@ -60,13 +59,12 @@ const Testimonials = () => {
         >
           <p className="font-playfair text-6xl">“</p>
           <p className="text-center text-xl">
-            Aliquam aliquet integer ut fames odio in at. At magna ornare dictum
-            lectus.
+             I was impressed by how quickly he understood our needs. The final product looked amazing and worked flawlessly across all devices
           </p>
         </motion.div>
 
         <motion.div
-          className="mx-auto relative bg-[#FDCC49] max-w-[400px] h-[350px] flex flex-col justify-end p-16 mt-48
+          className="mx-auto relative bg-[#FDCC49] max-w-[400px] h-[350px] flex flex-col justify-end p-7 mt-48
             before:absolute before:top-[-120px] before:-ml-[110px] before:left-1/2 before:content-[''] before:bg-[url('./assets/person-3.png')] before:bg-no-repeat before:bg-contain before:w-full before:h-[70%]"
           initial="hidden"
           whileInView="visible"
@@ -79,7 +77,7 @@ const Testimonials = () => {
         >
           <p className="font-playfair text-6xl">“</p>
           <p className="text-center text-xl">
-            Fames odio in at. At magna ornare dictum lectus.
+            Reliable, skilled, and easy to communicate with. I’d definitely recommend him to anyone looking for a solid frontend developer.
           </p>
         </motion.div>
       </div>

@@ -1,5 +1,7 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
+import { manSvg } from "../constants/manSvg";
+import { useState } from "react";
 
 const container = {
   hidden: {},
@@ -16,13 +18,15 @@ const projectVariant = {
 };
 
 const Project = ({ title,url,desc }) => {
+  // const [showSvg,setShowSvg] = useState(false)
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-     z-30 flex flex-col justify-center items-center text-center p-16 cursor-pointer rounded-lg`;
+     z-30 flex flex-col justify-center items-center text-center p-16 cursor-pointer rounded-lg font-medium`;
   const projectTitle = title.split(" ").join("-").toLowerCase();
 
   return (
-    <motion.div variants={projectVariant} className="relative">
+    <motion.div variants={projectVariant} className="relative" >
       <a href={url} target="_blank" className={`${overlayStyles} text-[#2CBCE9] bg-[#ededed]`}>
+        {/* {showSvg && <div className="absolute top-0 left-0 z-20">{manSvg}</div>} */}
         <p className="text-2xl font-playfair">{title}</p>
         <p className="mt-7">
           {desc}
@@ -96,7 +100,11 @@ const Projects = () => {
           </div>
         </motion.div>
       </div>
+      {/* <div>
+        {manSvg}
+      </div> */}
     </section>
+
   );
 };
 

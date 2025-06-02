@@ -2,16 +2,32 @@
 
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
- @layer utilities{
-
-   html,body,#root, .app {
-     height: 100%;
-     background-color: #010026;
-     /* @apply text-white; */
-    }
-    .bg-content-brush{
-      
-      background-image: url('./assets/brush.png');
-      background-size: contain;
-    }
+@layer utilities {
+  html,
+  body,
+  #root,
+  .app {
+    height: 100%;
+    background-color: #010026;
+    /* @apply text-white; */
   }
+  .bg-content-brush {
+    background-image: url("./assets/brush.png");
+    background-size: contain;
+  }
+  .a {
+    fill: #f9dccd;
+  }
+  .b {
+    fill: #000000;
+  }
+  .c {
+    fill: #262627;
+  }
+  .d {
+    fill: #000000;
+  }
+  .e {
+    fill: #00050a;
+  }
+}

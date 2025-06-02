@@ -1,16 +1,20 @@
+import { Typewriter } from "react-simple-typewriter";
 import LineGradient from "../components/LineGradient";
 import { jsSvg, reactSvg, tailwindSvg } from "../constants/constants";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const MySkills = () => {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+  const colors=["#2CBCE9","#DC4492","#FDCC49"]
+  const [ccolor,setCcolor]=useState(colors[0])
   return (
     <section id="skills" className="pt-10 pb-24">
       {/* HEADER AND IMAGE SECTION */}
-      <div className="md:flex md:justify-between md:gap-16 mt-32">
+      <div className="lg:flex lg:justify-between md:gap-16 mt-32">
         <motion.div
-          className="md:w-1/3"
+          className="lg:w-1/3"
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.5 }}
@@ -21,10 +25,23 @@ const MySkills = () => {
           }}
         >
           <p className="font-playfair font-semibold text-4xl mb-5">
-            MY <span className="text-red-500">SKILLS</span>
+            MY <span className="text-[#DC4492]">SKILLS</span>
           </p>
           <LineGradient width="w-1/3" />
-          <p className="mt-10 text-2xl mb-7">I often code in...</p>
+          <span className="mt-10 text-2xl mb-7">I often code in </span>
+          <span style={{ color: `${ccolor}`, fontSize:"1.8rem" }}>
+          
+          <Typewriter
+            words={['React', 'Javascript', 'Tailwind']}
+            loop={25}
+            cursor
+            cursorStyle='|'
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            onDelay={()=>setCcolor(colors[Math.floor(Math.random()*3)])}
+          />
+        </span>
         </motion.div>
 
         <div className="mt-16 md:mt-0">
@@ -57,10 +74,10 @@ const MySkills = () => {
       </div>
 
       {/* SKILLS */}
-      <div className="md:flex md:justify-between mt-16 gap-32">
+      <div className="lg:flex lg:justify-between mt-16 gap-32">
         {/* EXPERIENCE */}
         <motion.div
-          className="md:w-1/3 mt-10"
+          className="lg:w-1/3 mt-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.5 }}
@@ -77,18 +94,16 @@ const MySkills = () => {
               </p>
               <p className="font-playfair font-semibold text-3xl mt-3">React</p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-[#2CBCE9] absolute right-0 top-0 z-[-1]" />
+            <div className="w-1/2  h-32 bg-[#2CBCE9] absolute right-0 top-0 z-[-1]" />
           </div>
-          <p className="mt-5">
-            A auctor pharetra hendrerit mattis amet etiam interdum platea. Est
-            morbi porttitor scelerisque fermentum, sagittis non egestas. Amet
-            odio sit sagittis,
+          <p className="mt-5 text-justify">
+            React is a JavaScript library used to build fast and interactive single-page applications (SPAs). It uses JSX — a syntax extension that lets you write HTML-like code in JavaScript — and follows a component-based architecture.
           </p>
         </motion.div>
 
         {/* INNOVATIVE */}
         <motion.div
-          className="md:w-1/3 mt-10"
+          className="lg:w-1/3 mt-10"
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.5 }}
@@ -107,18 +122,15 @@ const MySkills = () => {
                 Javascript
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-[#FDAD95] absolute -right-15 top-0 z-[-1]" />
+            <div className="w-1/2  h-32 bg-[#FDAD95] absolute right-0 lg:-right-15 top-0 z-[-1]" />
           </div>
-          <p className="mt-5">
-            Urna, eget pulvinar dolor cursus volutpat dictum odio. Nec ultricies
-            amet in in neque nibh tortor. Libero sed pretium justo nulla blandit
-            nulla amet habitant iaculis. Iaculis in congue vitae sollicitudin
-            faucibus a
+          <p className="mt-5 text-justify">
+            JavaScript is the language that makes websites interactive. It helps add things like buttons that work, forms that react, and content that changes without refreshing the page.
           </p>
         </motion.div>
         {/* IMAGINATIVE */}
         <motion.div
-          className="md:w-1/3 mt-10"
+          className="lg:w-1/3 mt-10 "
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.5 }}
@@ -128,7 +140,7 @@ const MySkills = () => {
             visible: { opacity: 1, y: 0 },
           }}
         >
-          <div className="relative h-32">
+          <div className="relative h-32 ">
             <div className="z-10">
               <p className="font-playfair font-semibold text-5xl w-[90px]">
                 {tailwindSvg}
@@ -137,13 +149,10 @@ const MySkills = () => {
                 Tailwind
               </p>
             </div>
-            <div className="w-1/2 md:w-3/4 h-32 bg-[#44a8b3] absolute -right-10 top-0 z-[-1]" />
+            <div className="w-1/2  h-32 bg-[#44a8b3] absolute right-0 lg:-right-10 top-0 z-[-1]" />
           </div>
-          <p className="mt-5">
-            Accumsan eu fringilla nisi, eget. Vitae, eget ut id proin arcu in
-            curabitur. Lectus libero, egestas enim aliquam quis felis amet.
-            Sagittis, amet netus fringilla netus lobortis odio sed platea.
-            Bibendum.
+          <p className="mt-5 text-justify">
+           Tailwind is a CSS tool that lets you style your website by using ready-made classes. Instead of writing custom CSS, you just add class names to your HTML and quickly build clean designs.
           </p>
         </motion.div>
       </div>

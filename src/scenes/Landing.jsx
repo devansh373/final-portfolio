@@ -15,7 +15,7 @@ const Landing = ({ setSelectedPage }) => {
         {isAboveLarge ? (
           <div
             className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
-            before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-[#2CBCE9] before:z-[-1]"
+            before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-[#2CBCE9]  before:z-[-1]"
           >
             <motion.div
               initial="hidden"
@@ -29,7 +29,7 @@ const Landing = ({ setSelectedPage }) => {
             >
               <img
                 alt="profile"
-                className=" transition duration-500 z-10 w-full max-w-[400px] md:max-w-[400px]  rounded-t-full"
+                className=" transition duration-500 z-10 w-full max-w-[400px] md:max-w-[400px] rounded-t-full"
                 // src="assets/profile-image.png"
                 src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
                 // src="assets/fotor-20241111204342.png"
@@ -62,12 +62,12 @@ const Landing = ({ setSelectedPage }) => {
             visible: { opacity: 1, x: 0 },
           }}
         >
-          <p className="text-6xl font-playfair z-10 text-center md:text-start flex flex-wrap gap-3">
-            <span className="p-4 sm:py-4">
+          <p className="text-4xl font-playfair z-10 text-center md:text-start flex flex-wrap gap-1">
+            <span className="p-1 sm:py-4">
               Devansh {""}
               </span>
             <span
-              className="sm:font-semibold z-20 bg-[url('./assets/brush.png')] bg-no-repeat bg-cover bg-center
+              className="sm:font-semibold sm:text-[#010026] z-20 bg-[url('./assets/brush.png')] bg-no-repeat bg-cover bg-center
                  before:z-[-1]  p-4 sm:py-4"
             >
               <span className="text">
@@ -95,22 +95,22 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="bg-gradient-to-r from-blue-200 to-blue-400 text-blue-900 rounded-sm py-3 px-2 font-medium 
-              hover:bg-blue-950 hover:text-white transition duration-500"
+            className="bg-[linear-gradient(90deg,_#24CBFF_14.53%,_#FC59FF_69.36%,_#FFBD0C_117.73%)] text-[#010026] rounded-sm py-3 px-7 font-medium 
+              hover:bg-[#2CBCE9] hover:text-white transition duration-500"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
             Contact Me
           </AnchorLink>
-          {/* <AnchorLink
-            className="rounded-r-sm bg-gradient-rainblue py-0.5 pr-0.5"
+          <AnchorLink
+            className="rounded-r-sm bg-[linear-gradient(90deg,_#24CBFF_14.53%,_#FC59FF_69.36%,_#FFBD0C_117.73%)] py-0.5 pr-0.5"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            <div className="bg-blue-900 hover:text-red-500 transition duration-500 w-full h-full flex items-center justify-center px-3 font-playfair">
+            <div className="bg-[#010026] hover:text-[#DC4492] transition duration-500 w-full h-full flex items-center justify-center px-10 font-playfair">
               Let's talk.
             </div>
-          </AnchorLink> */}
+          </AnchorLink>
         </motion.div>
 
         <motion.div

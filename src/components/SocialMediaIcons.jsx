@@ -24,16 +24,7 @@ const SocialMediaIcons = () => {
         <FaGithub/>
         {/* <img alt="twitter-link" src="../assets/twitter.png" /> */}
       </a>
-      <a
-        className="text-white hover:text-amber-600 transition duration-500 text-3xl"
-        href=""
-        // href="https://www.facebook.com"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <FaXTwitter/>
-        {/* <img alt="facebook-link" src="../assets/facebook.png" /> */}
-      </a>
+      
       <a
         className="text-white hover:text-amber-600 transition duration-500 text-3xl"
         href="https://www.frontendmentor.io/profile/devansh373"

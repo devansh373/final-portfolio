@@ -33,7 +33,7 @@ const MySkills = () => {
           
           <Typewriter
             words={['React', 'Javascript', 'Tailwind']}
-            loop={25}
+            loop={0}
             cursor
             cursorStyle='|'
             typeSpeed={70}
@@ -63,12 +63,12 @@ const MySkills = () => {
                 <img
                   alt="skills"
                   className="z-10"
-                  src="assets/skills-image.png"
+                  src="assets/skills-image.webp"
                 />
               </motion.div>
             </div>
           ) : (
-            <img alt="skills" className="z-10" src="assets/skills-image.png" />
+            <img alt="skills" className="z-10" src="assets/skills-image.webp" />
           )}
         </div>
       </div>

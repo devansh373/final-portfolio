@@ -31,19 +31,25 @@ const Landing = ({ setSelectedPage }) => {
                 alt="profile"
                 className=" transition duration-500 z-10 w-full max-w-[400px] md:max-w-[400px] rounded-t-full"
                 // src="assets/profile-image.png"
-                src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
+                src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.webp"
+                // src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.png"
+                // src="assets/avatar-1.png"
+                // src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
                 // src="assets/fotor-20241111204342.png"
                 // src="assets/IMG-20240227-WA0007.jpg"
                 // src="./assets/ReadyPlayerMe-Avatar.jpeg"
                 // src="./assets/ReadyPlayerMe-Avatar.png"
-              />
+                />
             </motion.div>
           </div>
         ) : (
           <img
-            alt="profile"
-            className="z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full"
-            src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
+          alt="profile"
+          className="z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full"
+          src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.webp"
+          // src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.png"
+            // src="assets/avatar-1.png"
+            // src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
             // src="assets/profile-image.png"
           />
         )}
@@ -67,7 +73,7 @@ const Landing = ({ setSelectedPage }) => {
               Devansh {""}
               </span>
             <span
-              className="sm:font-semibold sm:text-[#010026] z-20 bg-[url('./assets/brush.png')] bg-no-repeat bg-cover bg-center
+              className="sm:font-semibold sm:text-[#010026] z-20 bg-[url('./assets/brush.webp')] bg-no-repeat bg-cover bg-center
                  before:z-[-1]  p-4 sm:py-4"
             >
               <span className="text">

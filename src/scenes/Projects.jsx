@@ -27,12 +27,12 @@ const Project = ({ title,url,desc }) => {
     <motion.div variants={projectVariant} className="relative" >
       <a href={url} target="_blank" className={`${overlayStyles} text-[#2CBCE9] bg-[#ededed]`}>
         {/* {showSvg && <div className="absolute top-0 left-0 z-20">{manSvg}</div>} */}
-        <p className="text-2xl font-playfair">{title}</p>
+        <p className="text-2xl font-playfair">{title?.includes("Project") ? "Dummy Project":title}</p>
         <p className="mt-7">
           {desc}
         </p>
       </a>
-      <img src={`../assets/${projectTitle}.jpeg`} alt={projectTitle} className=" object-cover rounded-lg" />
+      <img src={`../assets/${projectTitle}.webp`} alt={projectTitle} className=" object-cover rounded-lg" />
     </motion.div>
   );
 };
@@ -85,13 +85,13 @@ const Projects = () => {
           <Project title="Netflix GPT" url={"https://dev-ntflx.netlify.app/"} desc={"This is a kind of Netflix(responsive) which has feature of Ai search"}/>
 
           {/* ROW 2 */}
-          <Project title="Project 3" />
-          <Project title="Project 4" />
-          <Project title="Project 5" />
+          <Project title="Project 3" url={"/"}/>
+          <Project title="Project 4" url={"/"}/>
+          <Project title="Project 5" url={"/"}/>
 
           {/* ROW 3 */}
-          <Project title="Project 6" />
-          <Project title="Project 7" />
+          <Project title="Project 6" url={"/"}/>
+          <Project title="Project 7" url={"/"}/>
           <div
             className="flex justify-center text-center items-center p-10 bg-[#237791]
               max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"

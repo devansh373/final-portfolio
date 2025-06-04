@@ -70,7 +70,7 @@ const Contact = () => {
         >
           {/* <img src="../assets/contact-image.jpeg" alt="contact" /> */}
           <img
-            src="../assets/ReadyPlayerMe-Avatar.jpeg"
+            src="../assets/ReadyPlayerMe-Avatar-2.webp"
             alt="contact"
             className="w-[380px]  rounded-lg border border-white"
           />

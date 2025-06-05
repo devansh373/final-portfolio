@@ -73,7 +73,7 @@ const Landing = ({ setSelectedPage }) => {
               Devansh {""}
               </span>
             <span
-              className="sm:font-semibold sm:text-[#010026] z-20 bg-[url('./assets/brush.webp')] bg-no-repeat bg-cover bg-center
+              className="sm:font-semibold sm:text-[#010026] z-20 bg-[url('../assets/brush.webp')] bg-no-repeat bg-cover bg-center
                  before:z-[-1]  p-4 sm:py-4"
             >
               <span className="text">

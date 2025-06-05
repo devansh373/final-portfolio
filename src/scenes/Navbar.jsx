@@ -1,6 +1,8 @@
 import { useState } from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import useMediaQuery from "../hooks/useMediaQuery";
+import { burstSvg } from "../constants/burstSvg";
+// import {burst} from "../assets/bbburst"
 
 const Link = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
@@ -24,8 +26,12 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
   return (
     <nav className={`${isTopOfPage ? "" : "bg-red-500"} z-40 w-full fixed top-0 py-6 bg-gradient-to-b from-black to-black/50 bg-transparent`}>
-      <div className="flex items-center justify-between mx-auto w-5/6">
-        <h4 className="font-playfair text-3xl font-bold">DR</h4>
+      <div className="relative flex items-center justify-between mx-auto w-5/6">
+      {/* <span className="absolute -left-[8%] rounded-full overflow-hidden w-[200px] h-[200px]"> */}
+        {/* <img className="w-[200px]" src="../assets/bbburst.svg" alt="" /> */}
+        {/* {burstSvg} */}
+        {/* </span> */}
+        <h4 className="font-playfair text-3xl font-bold bg-black ">DR</h4>
 
         {/* DESKTOP NAV */}
         {isDesktop ? (
@@ -58,7 +64,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
           </div>
         ) : (
           <button
-            className="rounded-full bg-red p-2"
+            className="rounded-full bg-[#DC4492] p-2"
             onClick={() => setIsMenuToggled(!isMenuToggled)}
           >
             <img alt="menu-icon" src="../assets/menu-icon.svg" />
@@ -67,7 +73,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
 
         {/* MOBILE MENU POPUP */}
         {!isDesktop && isMenuToggled && (
-          <div className="fixed right-0 bottom-0 h-full bg-blue w-[300px]">
+          <div className="fixed right-0 bottom-0 h-full bg-[#2CBCE9] w-[300px]">
             {/* CLOSE ICON */}
             <div className="flex justify-end p-12">
               <button onClick={() => setIsMenuToggled(!isMenuToggled)}>
@@ -76,7 +82,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }) => {
             </div>
 
             {/* MENU ITEMS */}
-            <div className="flex flex-col gap-10 ml-[33%] text-2xl text-deep-blue">
+            <div className="flex flex-col gap-10 ml-[33%] text-2xl text-[#010026]">
               <Link
                 page="Home"
                 selectedPage={selectedPage}

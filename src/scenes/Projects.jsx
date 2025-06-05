@@ -2,6 +2,8 @@ import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
 import { manSvg } from "../constants/manSvg";
 import { useState } from "react";
+import { Link } from "react-router";
+import { givePhotoURL } from "../helper/helper";
 
 const container = {
   hidden: {},
@@ -21,18 +23,18 @@ const Project = ({ title,url,desc }) => {
   // const [showSvg,setShowSvg] = useState(false)
   const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
      z-30 flex flex-col justify-center items-center text-center p-16 cursor-pointer rounded-lg font-medium`;
-  const projectTitle = title.split(" ").join("-").toLowerCase();
+  // const projectTitle = title.split(" ").join("-").toLowerCase();
 
   return (
     <motion.div variants={projectVariant} className="relative" >
-      <a href={url} target="_blank" className={`${overlayStyles} text-[#2CBCE9] bg-[#ededed]`}>
+      <Link to={url}  className={`${overlayStyles} text-[#2CBCE9] bg-[#ededed]`}>
         {/* {showSvg && <div className="absolute top-0 left-0 z-20">{manSvg}</div>} */}
         <p className="text-2xl font-playfair">{title?.includes("Project") ? "Dummy Project":title}</p>
         <p className="mt-7">
           {desc}
         </p>
-      </a>
-      <img src={`../assets/${projectTitle}.webp`} alt={projectTitle} className=" object-cover rounded-lg" />
+      </Link>
+      <img src={givePhotoURL(title)} alt={"projectTitle"} className=" object-cover rounded-lg" />
     </motion.div>
   );
 };
@@ -81,8 +83,10 @@ const Projects = () => {
           >
             BEAUTIFUL USER INTERFACES
           </div>
-          <Project title="YouTube Clone" url={"https://dev-yt.netlify.app/"}  desc={"This is a responsive clone of Youtube which uses Live Youtube Data Api and have features like search functionality, debouncing of 200ms, colour theme switch."}/>
-          <Project title="Netflix GPT" url={"https://dev-ntflx.netlify.app/"} desc={"This is a kind of Netflix(responsive) which has feature of Ai search"}/>
+          {/* desc={"This is a responsive clone of Youtube which uses Live Youtube Data Api and have features like search functionality, debouncing of 200ms, colour theme switch."} */}
+          {/* desc={"This is a kind of Netflix(responsive) which has feature of Ai search"} */}
+          <Project title="YouTube Dev" url={"/project/youtubeDev"}  />
+          <Project title="Netflix Ai" url={"/project/netflixAi"} />
 
           {/* ROW 2 */}
           <Project title="Project 3" url={"/"}/>

@@ -8,7 +8,15 @@
   #root,
   .app {
     height: 100%;
-    background-color: #010026;
+    /* background-color: #010026; */
+    background: #000000;
+    background: linear-gradient(
+      183deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgb(1, 0, 64) 38%,
+      rgba(0, 0, 0, 1) 100%
+    );
+
     /* @apply text-white; */
   }
   .bg-content-brush {

@@ -1,4 +1,5 @@
 import SocialMediaIcons from "../components/SocialMediaIcons";
+import { quadSVG } from "../constants/quadSVG";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -87,6 +88,7 @@ const Landing = ({ setSelectedPage }) => {
             Frontend Developer proficient in React
           </p>
         </motion.div>
+        {/* {quadSVG} */}
 
         {/* CALL TO ACTIONS */}
         <motion.div

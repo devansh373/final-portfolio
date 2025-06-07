@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router";
 import { givePhotoURL } from "../helper/helper";
 import {motion} from "framer-motion"
 
 const ProjectDetails = () => {
+  useEffect(()=>{
+    window.scrollTo(100,100)
+  },[])
   const { id } = useParams();
   const projectDetails = [
     {
@@ -59,13 +62,13 @@ const ProjectDetails = () => {
         "This is a kind of Netflix(responsive) which has feature of Ai search",
       techStack: "",
       features:[
-        
+
       ]
     },
   ];
   const projectOpened = projectDetails.find((project) => project.id === id);
   return (
-    <div className="text-white p-8">
+    <div className="text-white p-6">
       <h1 className="text-5xl text-center font-medium text-[#DC4492]">{projectOpened.name}</h1>
       <p className="text-3xl text-[#922d61] font-medium py-5">Description:</p>
       <p className="text-xl">{projectOpened.description}</p>

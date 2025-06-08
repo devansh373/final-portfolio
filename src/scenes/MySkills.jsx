@@ -3,12 +3,55 @@ import LineGradient from "../components/LineGradient";
 import { jsSvg, reactSvg, tailwindSvg } from "../constants/constants";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { htmlSvg } from "../constants/htmlSvg";
+import { cssSvg } from "../constants/cssSvg";
+import { reduxSvg } from "../constants/reduxSvg";
+import { apiSvg } from "../constants/apiSvg";
+import { svgLogoSvg } from "../constants/svgLogoSvg";
 
 const MySkills = () => {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
-  const colors=["#2CBCE9","#DC4492","#FDCC49"]
-  const [ccolor,setCcolor]=useState(colors[0])
+  const svgRefs = useRef([]);
+  const parallaxFactors = useRef([]);
+  const svgWrapRef = useRef();
+  const colors = ["#2CBCE9", "#DC4492", "#FDCC49"];
+  const [ccolor, setCcolor] = useState(colors[0]);
+  const svgs = [reactSvg, jsSvg, tailwindSvg,htmlSvg,cssSvg,reduxSvg,apiSvg,svgLogoSvg];
+
+  useEffect(() => {
+    // window.onmousemove
+
+    const handleMouseMove = (e) => {
+      if (!svgWrapRef.current) return;
+
+      const rect = svgWrapRef.current.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const centerY = rect.top + rect.height / 2;
+
+      // Calculate how far the mouse is from the center
+      const dx = e.clientX - centerX;
+      const dy = e.clientY - centerY;
+
+      // Parallax factor — lower means slower movement
+      const factor = -0.1;
+
+      svgRefs.current?.forEach((svg,index) => {
+        if (svg) {
+           const factor = parallaxFactors.current[index] || -0.1;
+          svg.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
+        }
+      });
+    };
+
+    console.log(svgWrapRef.current);
+    svgWrapRef.current &&
+      svgWrapRef.current.addEventListener("mousemove", handleMouseMove);
+    return () =>
+      svgWrapRef.current &&
+      svgWrapRef.current.removeEventListener("mousemove", handleMouseMove);
+  }, [isAboveLarge]);
+  // console.log("render")
   return (
     <section id="skills" className="pt-10 pb-24">
       {/* HEADER AND IMAGE SECTION */}
@@ -29,43 +72,67 @@ const MySkills = () => {
           </p>
           <LineGradient width="w-1/3" />
           <span className="mt-10 text-2xl mb-7">I often code in </span>
-          <span style={{ color: `${ccolor}`, fontSize:"1.8rem" }}>
-          
-          <Typewriter
-            words={['React', 'Javascript', 'Tailwind']}
-            loop={0}
-            cursor
-            cursorStyle='|'
-            typeSpeed={70}
-            deleteSpeed={50}
-            delaySpeed={1000}
-            onDelay={()=>setCcolor(colors[Math.floor(Math.random()*3)])}
-          />
-        </span>
+          <span style={{ color: `${ccolor}`, fontSize: "1.8rem" }}>
+            <Typewriter
+              words={["React", "Javascript", "Tailwind"]}
+              loop={0}
+              cursor
+              cursorStyle="|"
+              typeSpeed={70}
+              deleteSpeed={50}
+              delaySpeed={1000}
+              onDelay={() => setCcolor(colors[Math.floor(Math.random() * 3)])}
+            />
+          </span>
         </motion.div>
 
         <div className="mt-16 md:mt-0">
           {isAboveLarge ? (
+            // <div
+            //   className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
+            //   before:w-full before:h-full before:border-2 before:border-[#2CBCE9] before:z-[-1]"
+            // >
+            //   <motion.div
+            //     initial="hidden"
+            //     whileInView="visible"
+            //     viewport={{ amount: 0.5 }}
+            //     transition={{ duration: 1 }}
+            //     variants={{
+            //       hidden: { x: -40, y: -40 },
+            //       visible: { x: 0, y: 0 },
+            //     }}
+            //   >
+            // </motion.div>
+            // </div>
             <div
-              className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
-              before:w-full before:h-full before:border-2 before:border-[#2CBCE9] before:z-[-1]"
+              className="w-[50vw] h-[450px] border border-white overflow-hidden relative skills-parallax-wrap"
+              ref={svgWrapRef}
             >
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ amount: 0.5 }}
-                transition={{ duration: 1 }}
-                variants={{
-                  hidden: { x: -40, y: -40 },
-                  visible: { x: 0, y: 0 },
-                }}
-              >
-                <img
-                  alt="skills"
-                  className="z-10"
-                  src="assets/skills-image.webp"
-                />
-              </motion.div>
+              {svgs.map((svg, index) => {
+                if (!parallaxFactors.current[index]) {
+                  parallaxFactors.current[index] = -0.05 - Math.random() * 0.15;
+                }
+                return (
+                  <span
+                    key={index}
+                    ref={(el) => (svgRefs.current[index] = el)}
+                    style={{
+                      left: `${100 * (index + 1)}px`,
+                      top: `${100 * (index + 1)}px`,
+                      // left: `${Math.floor(Math.random() * 400)}px`,
+                      // top: `${Math.floor(Math.random() * 300)}px`,
+                    }}
+                    className={`w-[100px] h-[50px] absolute left-[${
+                      100 * (index + 1)
+                    }px]`}
+                  >
+                    {svg}
+                  </span>
+                );
+              })}
+              {/* <span className="w-[100px] h-[50px] absolute">{reactSvg}</span>
+              <span className="w-[100px] h-[50px] absolute">{jsSvg}</span>
+              <span className="w-[100px] h-[50px] absolute">{tailwindSvg}</span> */}
             </div>
           ) : (
             <img alt="skills" className="z-10" src="assets/skills-image.webp" />
@@ -97,7 +164,10 @@ const MySkills = () => {
             <div className="w-1/2  h-32 bg-[#2CBCE9] absolute right-0 top-0 z-[-1]" />
           </div>
           <p className="mt-5 text-justify">
-            React is a JavaScript library used to build fast and interactive single-page applications (SPAs). It uses JSX — a syntax extension that lets you write HTML-like code in JavaScript — and follows a component-based architecture.
+            React is a JavaScript library used to build fast and interactive
+            single-page applications (SPAs). It uses JSX — a syntax extension
+            that lets you write HTML-like code in JavaScript — and follows a
+            component-based architecture.
           </p>
         </motion.div>
 
@@ -125,7 +195,9 @@ const MySkills = () => {
             <div className="w-1/2  h-32 bg-[#FDAD95] absolute right-0 lg:-right-15 top-0 z-[-1]" />
           </div>
           <p className="mt-5 text-justify">
-            JavaScript is the language that makes websites interactive. It helps add things like buttons that work, forms that react, and content that changes without refreshing the page.
+            JavaScript is the language that makes websites interactive. It helps
+            add things like buttons that work, forms that react, and content
+            that changes without refreshing the page.
           </p>
         </motion.div>
         {/* IMAGINATIVE */}
@@ -152,7 +224,9 @@ const MySkills = () => {
             <div className="w-1/2  h-32 bg-[#44a8b3] absolute right-0 lg:-right-10 top-0 z-[-1]" />
           </div>
           <p className="mt-5 text-justify">
-           Tailwind is a CSS tool that lets you style your website by using ready-made classes. Instead of writing custom CSS, you just add class names to your HTML and quickly build clean designs.
+            Tailwind is a CSS tool that lets you style your website by using
+            ready-made classes. Instead of writing custom CSS, you just add
+            class names to your HTML and quickly build clean designs.
           </p>
         </motion.div>
       </div>

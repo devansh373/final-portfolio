@@ -1,11 +1,14 @@
+import { useState } from "react";
 import SocialMediaIcons from "../components/SocialMediaIcons";
 import { quadSVG } from "../constants/quadSVG";
 import useMediaQuery from "../hooks/useMediaQuery";
 import { motion } from "framer-motion";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { circleSVG } from "../constants/circleSVG";
 
 const Landing = ({ setSelectedPage }) => {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
+
   return (
     <section
       id="home"
@@ -40,15 +43,15 @@ const Landing = ({ setSelectedPage }) => {
                 // src="assets/IMG-20240227-WA0007.jpg"
                 // src="./assets/ReadyPlayerMe-Avatar.jpeg"
                 // src="./assets/ReadyPlayerMe-Avatar.png"
-                />
+              />
             </motion.div>
           </div>
         ) : (
           <img
-          alt="profile"
-          className="z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full"
-          src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.webp"
-          // src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.png"
+            alt="profile"
+            className="z-10 w-full max-w-[400px] md:max-w-[600px] rounded-t-full"
+            src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.webp"
+            // src="assets/avatar-1_upscayl_4x_realesrgan-x4plus.png"
             // src="assets/avatar-1.png"
             // src="assets/IMG-20240227-WA0007-fotor-20250531211634.png"
             // src="assets/profile-image.png"
@@ -70,17 +73,12 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <p className="text-4xl font-playfair z-10 text-center md:text-start flex flex-wrap gap-1">
-            <span className="p-1 sm:py-4">
-              Devansh {""}
-              </span>
+            <span className="p-1 sm:py-4">Devansh {""}</span>
             <span
               className="sm:font-semibold sm:text-[#010026] z-20 bg-[url('../assets/brush.webp')] bg-no-repeat bg-cover bg-center
                  before:z-[-1]  p-4 sm:py-4"
             >
-              <span className="text">
-
-              Raghav
-              </span>
+              <span className="text">Raghav</span>
             </span>
           </p>
 
@@ -88,11 +86,13 @@ const Landing = ({ setSelectedPage }) => {
             Frontend Developer proficient in React
           </p>
         </motion.div>
+        
         {/* {quadSVG} */}
 
         {/* CALL TO ACTIONS */}
+        {/* {circleSVG} */}
         <motion.div
-          className="flex mt-5 justify-center md:justify-start"
+          className="flex w-[250px] mt-5 justify-center md:justify-start move-left"
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.5 }}
@@ -103,19 +103,19 @@ const Landing = ({ setSelectedPage }) => {
           }}
         >
           <AnchorLink
-            className="bg-[linear-gradient(90deg,_#24CBFF_14.53%,_#FC59FF_69.36%,_#FFBD0C_117.73%)] text-[#010026] rounded-sm py-3 px-7 font-medium 
-              hover:bg-[#2CBCE9] hover:text-white transition duration-500"
+            className="bg-[linear-gradient(90deg,_#24CBFF_14.53%,_#FC59FF_69.36%,_#FFBD0C_117.73%)] text-[#010026] rounded-sm py-3.5 px-10.5 font-medium 
+              hover:bg-[#2CBCE9] hover:text-white transition duration-500 move-left-contact-btn"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
             Contact Me
           </AnchorLink>
           <AnchorLink
-            className="rounded-r-sm bg-[linear-gradient(90deg,_#24CBFF_14.53%,_#FC59FF_69.36%,_#FFBD0C_117.73%)] py-0.5 pr-0.5"
+            className="rounded-r-sm bg-[linear-gradient(90deg,_#24CBFF_14.53%,_#FC59FF_69.36%,_#FFBD0C_117.73%)] py-0.5 pr-0.5 lets-talk"
             onClick={() => setSelectedPage("contact")}
             href="#contact"
           >
-            <div className="bg-[#010026] hover:text-[#DC4492] transition duration-500 w-full h-full flex items-center justify-center px-10 font-playfair">
+            <div className="bg-[#010026] hover:text-[#DC4492] transition duration-500 w-full h-full flex items-center justify-center py-3 px-10 font-playfair ">
               Let's talk.
             </div>
           </AnchorLink>

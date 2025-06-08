@@ -2,6 +2,7 @@ import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import { quadSVG } from "../constants/quadSVG";
 
 const Contact = () => {
   const {
@@ -32,7 +33,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="contact py-48">
+    <section id="contact" className="contact py-48 relative">
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -68,6 +69,34 @@ const Contact = () => {
           }}
           className="basis-1/2 flex justify-center"
         >
+          <span className="quadSVGSpan">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.5 }}
+              transition={{ duration: 0.5 }}
+              animate="visible"
+              variants={{
+                // hidden: { opacity: 0, y: 50 },
+                // visible: { opacity: 1, y: 0 },
+                hidden: {
+                  pathLength: 0,
+                  pathOffset: 1, // optional, usually pathLength is enough
+                },
+                visible: {
+                  pathLength: 1,
+                  pathOffset: 0,
+                  transition: {
+                    duration: 2,
+                    ease: "easeInOut",
+                  },
+                },
+              }}
+               strokeDasharray="1 1"
+            >
+              {quadSVG}
+            </motion.div>
+          </span>
           {/* <img src="../assets/contact-image.jpeg" alt="contact" /> */}
           <img
             src="../assets/ReadyPlayerMe-Avatar-2.webp"

@@ -19,27 +19,71 @@ const projectVariant = {
   visible: { opacity: 1, scale: 1 },
 };
 
-const Project = ({ title,url,desc }) => {
-  // const [showSvg,setShowSvg] = useState(false)
-  const overlayStyles = `absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-     z-30 flex flex-col justify-center items-center text-center p-16 cursor-pointer rounded-lg font-medium`;
-  // const projectTitle = title.split(" ").join("-").toLowerCase();
+// import { motion } from "framer-motion";
+// import { Link } from "react-router";
+// import { givePhotoURL } from "../helper/helper";
+
+const Project = ({ title, url, hoveredProject, setHoveredProject }) => {
+
+  const isHovered = hoveredProject === title;
+
+  const sizeClass = isHovered
+    ? "w-[400px] h-[400px]"
+    : hoveredProject
+    ? "w-[300px] h-[300px]"
+    : "w-[300px] h-[300px]";
 
   return (
-    <motion.div variants={projectVariant} className="relative" >
-      <Link to={url}  className={`${overlayStyles} text-[#2CBCE9] bg-[#ededed]`}>
-        {/* {showSvg && <div className="absolute top-0 left-0 z-20">{manSvg}</div>} */}
-        <p className="text-2xl font-playfair">{title?.includes("Project") ? "Dummy Project":title}</p>
-        <p className="mt-7">
-          {desc}
+    <motion.div
+      layout
+      variants={{
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1 },
+      }}
+      transition={{
+        ease: [0.25, 0.1, 0.25, 1],
+        duration: 0.5,
+      }}
+      onMouseEnter={() => setHoveredProject(title)}
+      onMouseLeave={() => setHoveredProject(null)}
+      className={`relative transition-all duration-300 rounded-lg ${sizeClass} min-w-[200px] min-h-[200px]`}
+    >
+      <Link
+        to={url}
+        className="absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
+          z-30 flex flex-col justify-center items-center text-center p-10 cursor-pointer rounded-lg font-medium text-[#2CBCE9] bg-[#ededed]"
+      >
+        <p className="text-2xl font-playfair">
+          {title?.includes("Project") ? "Dummy Project" : title}
         </p>
+        {/* <p className="mt-7">Project description goes here.</p> */}
       </Link>
-      <img src={givePhotoURL(title)} alt={"projectTitle"} className=" object-cover rounded-lg" />
+      <img
+        src={givePhotoURL(title)}
+        alt={title}
+        className="w-full h-full object-cover rounded-lg"
+      />
     </motion.div>
   );
 };
 
+// export default Project;
+
+
+
 const Projects = () => {
+  const [hoveredProject, setHoveredProject] = useState(null);
+
+  const projectsList = [
+    { title: "YouTube Dev", url: "/project/youtubeDev" },
+    { title: "Netflix Ai", url: "/project/netflixAi" },
+    { title: "Project 3", url: "/" },
+    { title: "Project 4", url: "/" },
+    { title: "Project 5", url: "/" },
+    { title: "Project 6", url: "/" },
+    // { title: "Project 7", url: "/" },
+  ];
+
   return (
     <section id="projects" className="pt-48 pb-48">
       {/* HEADINGS */}
@@ -47,7 +91,7 @@ const Projects = () => {
         className="md:w-2/5 mx-auto text-center"
         initial="hidden"
         whileInView="visible"
-        viewport={{  amount: 0.5 }}
+        viewport={{ amount: 0.5 }}
         transition={{ duration: 0.5 }}
         variants={{
           hidden: { opacity: 0, y: -50 },
@@ -63,53 +107,33 @@ const Projects = () => {
           </div>
         </div>
         <p className="mt-10 mb-10">
-        Following are the projects I made as a Front End Developer:
+          Following are the projects I made as a Front End Developer:
         </p>
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex justify-center ">
+      <div className="flex justify-center w-full pl-[10rem]">
         <motion.div
-          className="sm:grid gap-3 sm:grid-cols-3 rounded-lg"
+          className="sm:flex flex-wrap gap-[2rem] rounded-lg"
           variants={container}
           initial="hidden"
           whileInView="visible"
-          viewport={{  amount: 0.2 }}
+          viewport={{ amount: 0.2 }}
         >
-          {/* ROW 1 */}
-          <div
-            className="flex justify-center  text-center items-center p-10 bg-[#922d61]
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-medium"
-          >
-            BEAUTIFUL USER INTERFACES
-          </div>
-          {/* desc={"This is a responsive clone of Youtube which uses Live Youtube Data Api and have features like search functionality, debouncing of 200ms, colour theme switch."} */}
-          {/* desc={"This is a kind of Netflix(responsive) which has feature of Ai search"} */}
-          <Project title="YouTube Dev" url={"/project/youtubeDev"}  />
-          <Project title="Netflix Ai" url={"/project/netflixAi"} />
-
-          {/* ROW 2 */}
-          <Project title="Project 3" url={"/"}/>
-          <Project title="Project 4" url={"/"}/>
-          <Project title="Project 5" url={"/"}/>
-
-          {/* ROW 3 */}
-          <Project title="Project 6" url={"/"}/>
-          <Project title="Project 7" url={"/"}/>
-          <div
-            className="flex justify-center text-center items-center p-10 bg-[#237791]
-              max-w-[400px] max-h-[400px] text-2xl font-playfair font-semibold"
-          >
-            SMOOTH USER EXPERIENCE
-          </div>
+          {projectsList.map(({ title, url }, index) => (
+            <Project
+              key={index}
+              title={title}
+              url={url}
+              hoveredProject={hoveredProject}
+              setHoveredProject={setHoveredProject}
+            />
+          ))}
         </motion.div>
       </div>
-      {/* <div>
-        {manSvg}
-      </div> */}
     </section>
-
   );
 };
+
 
 export default Projects;

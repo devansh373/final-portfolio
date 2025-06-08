@@ -8,17 +8,22 @@
   #root,
   .app {
     height: 100%;
-    /* background-color: #010026; */
+
     background: #000000;
+    background-repeat: repeat;
     background: linear-gradient(
       183deg,
       rgba(0, 0, 0, 1) 0%,
       rgb(1, 0, 64) 38%,
       rgba(0, 0, 0, 1) 100%
     );
-
-    /* @apply text-white; */
   }
+  @property --box-shadow-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: cyan;
+  }
+
   .bg-content-brush {
     background-image: url("./assets/brush.png");
     background-size: contain;
@@ -38,14 +43,89 @@
   .e {
     fill: #00050a;
   }
-  .draw{
-    stroke-dasharray: 400;
-    stroke-dashoffset: 400;
+  .draw {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
     animation: drawSVG 3s linear forwards;
   }
   @keyframes drawSVG {
-    to{
+    to {
       stroke-dashoffset: 0;
     }
   }
+  .perspective-avatar {
+    perspective: 500px;
+    transform-style: preserve-3d;
+    position: relative;
+    z-index: 5;
+    /* background-color: wheat; */
+    transition: all 0.3s ease-in-out;
+    /* overflow: hidden; */
+    /* object-fit: cover; */
+  }
+  /* .perspective-avatar:hover {
+    box-shadow: 0px 0px 49px 11px var(--box-shadow-color) inset;
+    -webkit-box-shadow: 0px 0px 49px 11px var(--box-shadow-color);
+    -moz-box-shadow: 0px 0px 49px 11px var(--box-shadow-color);
+    animation: bs-color 0.5s linear infinite alternate;
+    } */
+    
+    .perspective-avatar img {
+      width: 90px !important;
+      margin-left: -10px;
+      max-width: 200%;
+      height: auto;
+      object-fit: contain;
+      transform: translate3d(0px, -15px, 0px);
+      z-index: 2;
+      filter: drop-shadow(0px 0px 4px rgb(255, 0, 242));
+      transition: all 0.5s ease-in-out;
+  }
+  .perspective-avatar img:hover {
+    filter: drop-shadow(0px 0px 4px cyan);
+  }
+  .hide-bottom-0f-avatar {
+    width: 40px;
+    /* height: 5px; */
+    border-bottom: 11px solid #252738;
+    background: #252738;
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    border-radius: 50%;
+    z-index: 3;
+  }
+  .burst-svg {
+    /* display: block; */
+    /* width: 100px; */
+    /* height: 100px; */
+    z-index: -100;
+    position: absolute;
+    top: -26px;
+    left: -29px;
+    z-index: -1;
+    /* transform: scale(0); */
+    transition: all 0.5s cubic-bezier(1, -0.97, 0, 1.56);
+  }
+
+  .move-left-contact-btn {
+    position: absolute;
+  }
+  .move-left {
+    padding-left: 50px;
+  }
+  .move-left:hover .move-left-contact-btn {
+    transform: translateX(-100%);
+  }
+  .lets-talk:hover ~ .move-left-contact-btn {
+  }
+.quadSVGSpan{
+  position: absolute;
+  top: 220px;
+  left: -450px;
+  width: 900px;
+  /* height: 600px; */
+}
+
+.skills-parallax-wrap{}
 }

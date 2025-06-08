@@ -33,7 +33,7 @@ function Body() {
   return (
     <>
       
-        <div className="app bg-[#010026] text-white ">
+        <div className="app  text-white">
           <Navbar
             isTopOfPage={isTopOfPage}
             selectedPage={selectedPage}
@@ -51,7 +51,7 @@ function Body() {
             </motion.div>
           </div>
           <LineGradient />
-          <div className="w-5/6 mx-auto xl:h-full ">
+          <div className="w-5/6 mx-auto xl:h-auto ">
             <motion.div onViewportEnter={() => setSelectedPage("skills")}>
               <MySkills />
             </motion.div>

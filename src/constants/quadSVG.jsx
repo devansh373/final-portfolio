@@ -1,4 +1,5 @@
 export const quadSVG = (
+
   <svg
     xmlns="http://www.w3.org/2000/svg"
     version="1.1"
@@ -6,7 +7,7 @@ export const quadSVG = (
     // xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlnsSvgjs="http://svgjs.dev/svgjs"
     viewBox="0 0 1422 800"
-    className="draw absolute -z-20"
+    className=" absolute -z-20"
   >
     <defs>
          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">

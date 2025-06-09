@@ -1,8 +1,11 @@
 import SocialMediaIcons from "../components/SocialMediaIcons";
+import { quadSVG } from "../constants/quadSVG";
+import {motion} from 'framer-motion'
 
 const Footer = () => {
   return (
-    <footer className="h-64 bg-[#922d61] pt-10 ">
+    <footer className="h-64 bg-[#922d61] pt-10 relative overflow-hidden">
+      
       <div className="w-10/12 mx-auto">
         <SocialMediaIcons />
         <div className="md:flex justify-center md:justify-between text-center ">

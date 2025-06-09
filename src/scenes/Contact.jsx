@@ -58,6 +58,7 @@ const Contact = () => {
 
       {/* FORM & IMAGE */}
       <div className="md:flex md:justify-between gap-16 mt-5">
+       
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -69,34 +70,7 @@ const Contact = () => {
           }}
           className="basis-1/2 flex justify-center"
         >
-          <span className="quadSVGSpan">
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ amount: 0.5 }}
-              transition={{ duration: 0.5 }}
-              animate="visible"
-              variants={{
-                // hidden: { opacity: 0, y: 50 },
-                // visible: { opacity: 1, y: 0 },
-                hidden: {
-                  pathLength: 0,
-                  pathOffset: 1, // optional, usually pathLength is enough
-                },
-                visible: {
-                  pathLength: 1,
-                  pathOffset: 0,
-                  transition: {
-                    duration: 2,
-                    ease: "easeInOut",
-                  },
-                },
-              }}
-               strokeDasharray="1 1"
-            >
-              {quadSVG}
-            </motion.div>
-          </span>
+          
           {/* <img src="../assets/contact-image.jpeg" alt="contact" /> */}
           <img
             src="../assets/ReadyPlayerMe-Avatar-2.webp"

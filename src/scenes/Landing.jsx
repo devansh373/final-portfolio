@@ -19,8 +19,36 @@ const Landing = ({ setSelectedPage }) => {
         {isAboveLarge ? (
           <div
             className="relative z-0 ml-20 before:absolute before:-top-20 before:-left-20 before:rounded-t-[400px]
-            before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-[#2CBCE9]  before:z-[-1]"
+            before:w-full before:max-w-[400px] md:before:max-w-[600px] before:h-full before:border-2 before:border-[#2CBCE9]  before:z-[-1] landing-before"
           >
+             {/* <span className="quadSVGSpan">
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ amount: 0.4 }}
+              // transition={{ duration: 5 }}
+              // animate="visible"
+              variants={{
+                // hidden: { opacity: 0, y: 50 },
+                // visible: { opacity: 1, y: 0 },
+                hidden: {
+                  strokeDasharray: 2000,
+                  strokeDashoffset: 2000, // optional, usually pathLength is enough
+                },
+                visible: {
+                  // strokeDasharray: 1000,
+                  strokeDashoffset: 0,
+                  transition: {
+                    duration: 8,
+                    ease: "easeInOut",
+                  },
+                },
+              }}
+              //  strokeDasharray="1 1"
+            >
+              {quadSVG}
+            </motion.div>
+          </span> */}
             <motion.div
               initial="hidden"
               whileInView="visible"

@@ -9,7 +9,9 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
+      // staggerChildren: Math.floor(Math.random()*10)/10,
+      // delayChildren: Math.floor(Math.random()*10)/10,
     },
   },
 };
@@ -41,12 +43,14 @@ const Project = ({ title, url, hoveredProject, setHoveredProject }) => {
         visible: { opacity: 1, scale: 1 },
       }}
       transition={{
-        ease: [0.25, 0.1, 0.25, 1],
-        duration: 0.5,
+        // ease: [.29,-0.8,.87,2.06],
+        duration: 0.2,
+        // delay:Math.floor(Math.abs(5 - (Math.random()*10)))/10
       }}
+      
       onMouseEnter={() => setHoveredProject(title)}
       onMouseLeave={() => setHoveredProject(null)}
-      className={`relative transition-all duration-300 rounded-lg ${sizeClass} min-w-[200px] min-h-[200px]`}
+      className={`relative  rounded-lg ${sizeClass} min-w-[200px] min-h-[200px]`}
     >
       <Link
         to={url}

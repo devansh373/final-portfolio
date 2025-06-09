@@ -9,15 +9,27 @@ import { cssSvg } from "../constants/cssSvg";
 import { reduxSvg } from "../constants/reduxSvg";
 import { apiSvg } from "../constants/apiSvg";
 import { svgLogoSvg } from "../constants/svgLogoSvg";
+import { parallaxBgCirclesArray } from "../constants/parallaxBgSvg";
 
 const MySkills = () => {
   const isAboveLarge = useMediaQuery("(min-width: 1060px)");
   const svgRefs = useRef([]);
+  const svgCircleRefs = useRef([]);
   const parallaxFactors = useRef([]);
+  const svgLocations = useRef([]);
   const svgWrapRef = useRef();
   const colors = ["#2CBCE9", "#DC4492", "#FDCC49"];
   const [ccolor, setCcolor] = useState(colors[0]);
-  const svgs = [reactSvg, jsSvg, tailwindSvg,htmlSvg,cssSvg,reduxSvg,apiSvg,svgLogoSvg];
+  const svgs = [
+    reactSvg,
+    jsSvg,
+    tailwindSvg,
+    htmlSvg,
+    cssSvg,
+    reduxSvg,
+    apiSvg,
+    svgLogoSvg,
+  ];
 
   useEffect(() => {
     // window.onmousemove
@@ -34,11 +46,17 @@ const MySkills = () => {
       const dy = e.clientY - centerY;
 
       // Parallax factor — lower means slower movement
-      const factor = -0.1;
+      // const factor = -0.1;
 
-      svgRefs.current?.forEach((svg,index) => {
+      svgRefs.current?.forEach((svg, index) => {
         if (svg) {
-           const factor = parallaxFactors.current[index] || -0.1;
+          const factor = parallaxFactors.current[index] || -0.1;
+          svg.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
+        }
+      });
+      svgCircleRefs.current?.forEach((svg, index) => {
+        if (svg) {
+          const factor = parallaxFactors.current[index] || -0.1;
           svg.style.transform = `translate(${dx * factor}px, ${dy * factor}px)`;
         }
       });
@@ -53,11 +71,95 @@ const MySkills = () => {
   }, [isAboveLarge]);
   // console.log("render")
   return (
-    <section id="skills" className="pt-10 pb-24">
+    <section
+      id="skills"
+      className="pt-10 pb-24 relative h-[200vh] overflow-hidden"
+    >
       {/* HEADER AND IMAGE SECTION */}
-      <div className="lg:flex lg:justify-between md:gap-16 mt-32">
+      <div className="h-[80vh] lg:justify-between md:gap-16 mt-32 relative">
+        
+
+        {/* <div className="mt-16 md:mt-0 relative"> */}
+        {isAboveLarge ? (
+          // <div
+          //   className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
+          //   before:w-full before:h-full before:border-2 before:border-[#2CBCE9] before:z-[-1]"
+          // >
+          //   <motion.div
+          //     initial="hidden"
+          //     whileInView="visible"
+          //     viewport={{ amount: 0.5 }}
+          //     transition={{ duration: 1 }}
+          //     variants={{
+          //       hidden: { x: -40, y: -40 },
+          //       visible: { x: 0, y: 0 },
+          //     }}
+          //   >
+          // </motion.div>
+          // </div>
+          // bg-[url(../assets/ooorganize.svg)]
+          <div
+            className={`w-[100%] h-[70vh] left-0  absolute overflow-hidden skills-parallax-wrap z-[5]`}
+            ref={svgWrapRef}
+          >
+            {svgs.map((svg, index) => {
+              if (!parallaxFactors.current[index]) {
+                parallaxFactors.current[index] = -0.05 - Math.random() * 0.15;
+              }
+              if (!svgLocations.current[index]) {
+                svgLocations.current[index] = {
+                  left: Math.floor(Math.random() * 900),
+                  top: Math.floor(Math.random() * 300),
+                };
+              }
+              return (
+                <>
+                  <span
+                    key={index}
+                    ref={(el) => (svgRefs.current[index] = el)}
+                    style={{
+                      left: `${svgLocations.current[index].left}px`,
+                      top: `${svgLocations.current[index].top}px`,
+                      // left: `${Math.floor(Math.random() * 400)}px`,
+                      // top: `${Math.floor(Math.random() * 300)}px`,
+                    }}
+                    className={`w-[100px] h-[50px] absolute move-svg`}
+                  >
+                    {svg}
+                  </span>
+                </>
+              );
+            })}
+            <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xmlns:svgjs="http://svgjs.dev/svgjs"
+                    viewBox="0 0 800 800"
+                    className="w-full"
+                    
+                  >
+                    {parallaxBgCirclesArray.map((circle,index) => (
+                      <g
+                        stroke-width="3.5"
+                        stroke="hsla(182, 78%, 45%, 1.00)"
+                        fill="none"
+                        ref={(el)=>svgCircleRefs.current[index] = el}
+                      >
+                        {circle}
+                      </g>
+                    ))}
+                  </svg>
+            {/* <span className="w-[100px] h-[50px] absolute">{reactSvg}</span>
+              <span className="w-[100px] h-[50px] absolute">{jsSvg}</span>
+              <span className="w-[100px] h-[50px] absolute">{tailwindSvg}</span> */}
+          </div>
+        ) : (
+          <img alt="skills" className="z-10" src="assets/skills-image.webp" />
+        )}
+      </div>
         <motion.div
-          className="lg:w-1/3"
+          className="lg:w-1/3 mt-[0vh]"
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.5 }}
@@ -86,62 +188,8 @@ const MySkills = () => {
           </span>
         </motion.div>
 
-        <div className="mt-16 md:mt-0">
-          {isAboveLarge ? (
-            // <div
-            //   className="relative z-0 ml-20 before:absolute before:-top-10 before:-left-10
-            //   before:w-full before:h-full before:border-2 before:border-[#2CBCE9] before:z-[-1]"
-            // >
-            //   <motion.div
-            //     initial="hidden"
-            //     whileInView="visible"
-            //     viewport={{ amount: 0.5 }}
-            //     transition={{ duration: 1 }}
-            //     variants={{
-            //       hidden: { x: -40, y: -40 },
-            //       visible: { x: 0, y: 0 },
-            //     }}
-            //   >
-            // </motion.div>
-            // </div>
-            <div
-              className="w-[50vw] h-[450px] border border-white overflow-hidden relative skills-parallax-wrap"
-              ref={svgWrapRef}
-            >
-              {svgs.map((svg, index) => {
-                if (!parallaxFactors.current[index]) {
-                  parallaxFactors.current[index] = -0.05 - Math.random() * 0.15;
-                }
-                return (
-                  <span
-                    key={index}
-                    ref={(el) => (svgRefs.current[index] = el)}
-                    style={{
-                      left: `${100 * (index + 1)}px`,
-                      top: `${100 * (index + 1)}px`,
-                      // left: `${Math.floor(Math.random() * 400)}px`,
-                      // top: `${Math.floor(Math.random() * 300)}px`,
-                    }}
-                    className={`w-[100px] h-[50px] absolute left-[${
-                      100 * (index + 1)
-                    }px]`}
-                  >
-                    {svg}
-                  </span>
-                );
-              })}
-              {/* <span className="w-[100px] h-[50px] absolute">{reactSvg}</span>
-              <span className="w-[100px] h-[50px] absolute">{jsSvg}</span>
-              <span className="w-[100px] h-[50px] absolute">{tailwindSvg}</span> */}
-            </div>
-          ) : (
-            <img alt="skills" className="z-10" src="assets/skills-image.webp" />
-          )}
-        </div>
-      </div>
-
       {/* SKILLS */}
-      <div className="lg:flex lg:justify-between mt-16 gap-32">
+      <div className="lg:flex lg:justify-between  gap-32 pt-[10vh]">
         {/* EXPERIENCE */}
         <motion.div
           className="lg:w-1/3 mt-10"

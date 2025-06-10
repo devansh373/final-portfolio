@@ -76,9 +76,7 @@ const MySkills = () => {
       className="pt-10 pb-24 relative h-[200vh] overflow-hidden"
     >
       {/* HEADER AND IMAGE SECTION */}
-      <div className="h-[80vh] lg:justify-between md:gap-16 mt-32 relative">
-        
-
+      <div className="sm:h-[80vh] h-[30vh] lg:justify-between md:gap-16 mt-32 relative">
         {/* <div className="mt-16 md:mt-0 relative"> */}
         {isAboveLarge ? (
           // <div
@@ -131,25 +129,24 @@ const MySkills = () => {
               );
             })}
             <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    version="1.1"
-                    xmlns:xlink="http://www.w3.org/1999/xlink"
-                    xmlns:svgjs="http://svgjs.dev/svgjs"
-                    viewBox="0 0 800 800"
-                    className="w-full"
-                    
-                  >
-                    {parallaxBgCirclesArray.map((circle,index) => (
-                      <g
-                        stroke-width="3.5"
-                        stroke="hsla(182, 78%, 45%, 1.00)"
-                        fill="none"
-                        ref={(el)=>svgCircleRefs.current[index] = el}
-                      >
-                        {circle}
-                      </g>
-                    ))}
-                  </svg>
+              xmlns="http://www.w3.org/2000/svg"
+              version="1.1"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              xmlns:svgjs="http://svgjs.dev/svgjs"
+              viewBox="0 0 800 800"
+              className="w-full"
+            >
+              {parallaxBgCirclesArray.map((circle, index) => (
+                <g
+                  stroke-width="3.5"
+                  stroke="hsla(182, 78%, 45%, 1.00)"
+                  fill="none"
+                  ref={(el) => (svgCircleRefs.current[index] = el)}
+                >
+                  {circle}
+                </g>
+              ))}
+            </svg>
             {/* <span className="w-[100px] h-[50px] absolute">{reactSvg}</span>
               <span className="w-[100px] h-[50px] absolute">{jsSvg}</span>
               <span className="w-[100px] h-[50px] absolute">{tailwindSvg}</span> */}
@@ -158,35 +155,35 @@ const MySkills = () => {
           <img alt="skills" className="z-10" src="assets/skills-image.webp" />
         )}
       </div>
-        <motion.div
-          className="lg:w-1/3 mt-[0vh]"
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -50 },
-            visible: { opacity: 1, x: 0 },
-          }}
-        >
-          <p className="font-playfair font-semibold text-4xl mb-5">
-            MY <span className="text-[#DC4492]">SKILLS</span>
-          </p>
-          <LineGradient width="w-1/3" />
-          <span className="mt-10 text-2xl mb-7">I often code in </span>
-          <span style={{ color: `${ccolor}`, fontSize: "1.8rem" }}>
-            <Typewriter
-              words={["React", "Javascript", "Tailwind"]}
-              loop={0}
-              cursor
-              cursorStyle="|"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={1000}
-              onDelay={() => setCcolor(colors[Math.floor(Math.random() * 3)])}
-            />
-          </span>
-        </motion.div>
+      <motion.div
+        className="lg:w-1/3 mt-[0vh]"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ amount: 0.5 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          hidden: { opacity: 0, x: -50 },
+          visible: { opacity: 1, x: 0 },
+        }}
+      >
+        <p className="font-playfair font-semibold text-4xl mb-5">
+          MY <span className="text-[#DC4492]">SKILLS</span>
+        </p>
+        <LineGradient width="w-1/3" />
+        <span className="mt-10 text-2xl mb-7">I often code in </span>
+        <span style={{ color: `${ccolor}`, fontSize: "1.8rem" }}>
+          <Typewriter
+            words={["React", "Javascript", "Tailwind"]}
+            loop={0}
+            cursor
+            cursorStyle="|"
+            typeSpeed={70}
+            deleteSpeed={50}
+            delaySpeed={1000}
+            onDelay={() => setCcolor(colors[Math.floor(Math.random() * 3)])}
+          />
+        </span>
+      </motion.div>
 
       {/* SKILLS */}
       <div className="lg:flex lg:justify-between  gap-32 pt-[10vh]">

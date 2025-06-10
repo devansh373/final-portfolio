@@ -9,7 +9,7 @@ const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.1,
       // staggerChildren: Math.floor(Math.random()*10)/10,
       // delayChildren: Math.floor(Math.random()*10)/10,
     },
@@ -116,9 +116,9 @@ const Projects = () => {
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex justify-center w-full pl-[10rem]">
+      <div className="flex justify-center w-full sm:pl-[10rem] pl-[2rem]">
         <motion.div
-          className="sm:flex flex-wrap gap-[2rem] rounded-lg"
+          className="flex flex-wrap gap-[8rem] sm:gap-[2rem] rounded-lg"
           variants={container}
           initial="hidden"
           whileInView="visible"

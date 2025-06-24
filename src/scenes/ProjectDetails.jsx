@@ -142,13 +142,13 @@ const ProjectDetails = () => {
                 index % 2 !== 0 && "flex-row-reverse"
               } items-center justify-around flex-wrap gap-[2rem]`}
             >
-              <h1 className="text-4xl font-medium underline decoration-[#DC4492]">
+              <h1 className="text-4xl font-medium underline decoration-[#DC4492] text-center">
                 {feautre.title}
               </h1>
               <img
                 src={feautre.photoUrl}
                 alt="Project Photo"
-                className="min-w-[700px] w-[60vw]  border-4 border-[#DC4492] rounded-lg"
+                className="sm:min-w-[700px] min-w-[380px] w-[60vw]  border-4 border-[#DC4492] rounded-lg"
               />
             </div>
           </motion.div>

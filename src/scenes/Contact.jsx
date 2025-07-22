@@ -1,8 +1,8 @@
 import LineGradient from "../components/LineGradient";
 import { useForm } from "react-hook-form";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { quadSVG } from "../constants/quadSVG";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+// import { quadSVG } from "../constants/quadSVG";
 
 const Contact = () => {
   const {
@@ -14,6 +14,8 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+    const ref = useRef();
+  
   const [messageOnSubmit, setMessageOnSubmit] = useState("");
   useEffect(() => {
     (name || email || message) && setMessageOnSubmit("");
@@ -31,9 +33,10 @@ const Contact = () => {
       // console.log(isValid)
     }
   };
+  const isInView = useInView(ref, { once: false, margin: "0px" });
 
   return (
-    <section id="contact" className="contact py-48 relative">
+    <section id="contact" className="contact py-48 relative overflow-hidden" ref={ref}>
       {/* HEADINGS */}
       <motion.div
         initial="hidden"
@@ -44,11 +47,11 @@ const Contact = () => {
           hidden: { opacity: 0, x: 50 },
           visible: { opacity: 1, x: 0 },
         }}
-        className="flex justify-end w-full"
+        className="flex justify-end w-full "
       >
         <div>
           <p className="font-playfair font-semibold text-4xl">
-            <span className="text-[#FDCC49]">CONTACT ME</span> TO GET STARTED
+            <span className="text-[#FDCC49]">WANNA CONTACT </span> ME?
           </p>
           <div className="flex md:justify-end my-5">
             <LineGradient width="w-1/2" />
@@ -72,10 +75,21 @@ const Contact = () => {
         >
           
           {/* <img src="../assets/contact-image.jpeg" alt="contact" /> */}
-          <img
-            src="../assets/ReadyPlayerMe-Avatar-2.webp"
+          {/* <img
+            // src="../assets/ReadyPlayerMe-Avatar-2.webp"
+            // src="assets/Origami Wave.png"
+            src="assets/let_me_know.png"
+
             alt="contact"
-            className="w-[380px]  rounded-lg border border-white"
+            className="w-[380px]  rounded-lg "
+          /> */}
+          <motion.img
+            src="/assets/let_me_know.png"
+            alt="avatar"
+            initial={{ scale: 0, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.6, ease: "backOut" }}
+            className="w-[350px]  dropShadowClass"
           />
         </motion.div>
 

@@ -1,24 +1,99 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;600&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;600&display=swap"); */
 
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+/* @custom-variant dark (&:where(.dark, .dark *)); */
 @layer utilities {
   html,
   body,
   #root,
   .app {
-    height: 100%;
+    /* height: 100%; */
+    height: auto;
+/* background: transparent; */
+/* background: #000000; */
+background-repeat: repeat;
+/* background: linear-gradient(
+  183deg,
+  rgba(0, 0, 0, 1) 0%,
+  rgb(1, 0, 64) 38%,
+  rgba(0, 0, 0, 1) 100%
+  ); */
+   background: radial-gradient(ellipse at bottom, rgb(194, 72, 72) 10%, rgb(64 107 137) 30%, rgba(0, 0, 0, 1) 70%);
+    background-attachment: fixed;
+  scroll-behavior: smooth;
+}
+.gradientText{
+  /* background: url("assets/istockphoto-1353633402-612x612.jpg"); */
+  background: url("/assets/purple-background.avif");
+  background-size: contain;
+  /* background: linear-gradient(to right, #f00, rgb(0, 255, 247)); */
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  font-family: "Nosifer", sans-serif;
+}
+.nameText{
+  /* background: url("assets/9d701ff7db8e38c04816163c9398f395.gif"); */
+  /* background: url("assets/source.gif"); */
+  background: url("/assets/download.jpeg");
+  background-size: contain;
+  /* background: linear-gradient(to right, #f00, rgb(0, 255, 247)); */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  font-family: "Nosifer", sans-serif;
+}
+.resumeText{
+  font-family: "Cinzel Decorative", serif;
+  background: linear-gradient(to right, #f00, rgb(0, 255, 247));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+.masked-image {
+  width: 300px;
+  height: 300px;
+  background-image: url("assets/avatar-1.png");
+  background-size: cover;
+  background-position: center;
 
-    background: #000000;
+  -webkit-mask-image: url("assets/shape-11550708410fnbppjzbn2.png");
+  -webkit-mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+
+  mask-image: url("assets/shape-11550708410fnbppjzbn2.png");
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* @font-face {
+  font-family: "MyFont";
+  src: url("/fonts/MyFont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+ .stars-bg{
+  /* height: 100%; */
+      background: #000000;
     background-repeat: repeat;
-    background: linear-gradient(
-      183deg,
-      rgba(0, 0, 0, 1) 0%,
-      rgb(1, 0, 64) 38%,
-      rgba(0, 0, 0, 1) 100%
-    );
+    /* background: radial-gradient(
+      ellipse at bottom,
+      rgb(194, 72, 72) 30%,
+      rgba(0, 0, 0, 1) 70%
+    ); */
+        background: radial-gradient(ellipse at bottom, rgb(194, 72, 72) 10%, rgb(64 107 137) 30%, rgba(0, 0, 0, 1) 70%);
+    background-attachment: fixed;
   }
-  @property --box-shadow-color {
+  #home, .resume, #skills , #contact{
+     /* background: radial-gradient(ellipse at bottom, rgb(194, 72, 72) 10%, rgb(64 107 137) 30%, rgba(0, 0, 0, 1) 70%);
+    background-attachment: fixed; */
+    backdrop-filter: blur(55px);
+  }
+  /* @property --box-shadow-color {
     syntax: "<color>";
     inherits: false;
     initial-value: cyan;
@@ -42,8 +117,8 @@
   }
   .e {
     fill: #00050a;
-  }
-  .draw {
+  } */
+  /* .draw {
     stroke-dasharray: 1000;
     stroke-dashoffset: 1000;
     animation: drawSVG 3s linear forwards;
@@ -52,6 +127,9 @@
     to {
       stroke-dashoffset: 0;
     }
+  } */
+  .blurDiv{
+    backdrop-filter: blur(40px);
   }
   .perspective-avatar {
     perspective: 500px;
@@ -95,18 +173,7 @@
     border-radius: 50%;
     z-index: 3;
   }
-  .burst-svg {
-    /* display: block; */
-    /* width: 100px; */
-    /* height: 100px; */
-    z-index: -100;
-    position: absolute;
-    top: -26px;
-    left: -29px;
-    z-index: -1;
-    /* transform: scale(0); */
-    transition: all 0.5s cubic-bezier(1, -0.97, 0, 1.56);
-  }
+  
 
   .move-left-contact-btn {
     position: absolute;
@@ -117,32 +184,30 @@
   .move-left:hover .move-left-contact-btn {
     transform: translateX(-100%);
   }
-  .lets-talk:hover ~ .move-left-contact-btn {
+  .moveSvgLeft{
+    transform: translateX(-100vw);
   }
-.quadSVGSpan{
-  position: absolute;
-  /* top: 220px; */
-  /* left: -450px; */
-  width: 900px;
-  /* height: 600px; */
-  z-index: 10;
+
+
+
+.demo-svg{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: drawSVG 3s linear forwards 
 }
-.skills-parallax-wrap{
-      border-radius: 20px;
-    box-shadow: 0px 0px 53px 4px #20329e inset;
+.navbar{
+  box-shadow: 0px 0px 33px 1px rgba(255, 255, 255, 0.519) inset;
+  backdrop-filter: blur(10px);
 }
-.move-svg{
-  transition:scale 0.5s ease, filter 0.5s ease;
-  display: inline-block;
+
+.try-svg{
+  stroke-dashoffset: 1000;
+  stroke-dasharray: 1000;
+  animation: drawSVG 3s linear forwards 
 }
-.move-svg:hover{
-  /* transform: scale(1.5); */
-  scale: 1.2;
-  filter: drop-shadow(0 0 5px red);
+.dropShadowClass{
+  filter:drop-shadow(0px 0px 13px rgb(101, 189, 211))
+  /* filter: drop-shadow(1px 1px 1px black); */
 }
-.landing-before::before{
-  /* content: url(./assets/qqquad.svg); */
-  overflow: hidden;
-  background-image: url(./assets/qqquad.svg);
-}
+
 }

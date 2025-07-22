@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router";
-import { givePhotoURL } from "../helper/helper";
+
 import { motion } from "framer-motion";
 
 const ProjectDetails = () => {
@@ -94,24 +94,54 @@ const ProjectDetails = () => {
         },
       ],
     },
+    {
+      id: "autoCertificateDelivery",
+      name: "Auto Certificate Delivery Workshop",
+      liveUrl: "https://workshop-certificates-56fb5.firebaseapp.com/",
+      description:
+        "A workshop feedback system with Automatic Certificate Delivery",
+      techStack: "",
+      features: [
+        {
+          photoUrl: "../assets/dev-WC-homepage.jpg",
+          title: "Secure Admin Login",
+        },
+        {
+          photoUrl: "../assets/Admin_Dashboard.jpg",
+          title: "Admin Dashboard",
+        },
+        {
+          photoUrl: "../assets/form_creation.jpg",
+          title: "Form Creation",
+        },
+        {
+          photoUrl: "../assets/All_templates.jpg",
+          title: "All Templates",
+        },
+        {
+          photoUrl: "../assets/dynamic-placement-drag.jpg",
+          title: "Dynamic Placement of Fields (Drag)",
+        },
+      ],
+    },
   ];
   const projectOpened = projectDetails.find((project) => project.id === id);
   return (
-    <div className="text-white p-6">
+    <div className="text-white p-6 stars-bg">
       <h1 className="text-5xl text-center font-medium text-[#DC4492]">
-        {projectOpened.name}
+        {projectOpened?.name}
       </h1>
       <p className="text-3xl text-[#922d61] font-medium py-5">Description:</p>
-      <p className="text-xl">{projectOpened.description}</p>
+      <p className="text-xl">{projectOpened?.description}</p>
       <p className="text-3xl text-[#922d61] font-medium py-5">Live Site URL:</p>
       <a
-        href={projectOpened.liveUrl}
+        href={projectOpened?.liveUrl}
         target="_blank"
         className="text-xl underline py-5 inline-block hover:text-white text-[#2CBCE9]"
       >
-        {projectOpened.liveUrl}
+        {projectOpened?.liveUrl}
       </a>
-      {projectOpened.disclaimer && (
+      {projectOpened?.disclaimer && (
         <>
           <p className="text-3xl text-[#922d61] font-medium py-5">
             Disclaimer:
@@ -143,82 +173,17 @@ const ProjectDetails = () => {
               } items-center justify-around flex-wrap gap-[2rem]`}
             >
               <h1 className="text-4xl font-medium underline decoration-[#DC4492] text-center">
-                {feautre.title}
+                {feautre?.title}
               </h1>
               <img
-                src={feautre.photoUrl}
+                src={feautre?.photoUrl}
                 alt="Project Photo"
-                className="sm:min-w-[700px] min-w-[380px] w-[60vw]  border-4 border-[#DC4492] rounded-lg"
+                className="sm:min-w-[700px] min-h-[200px] min-w-[320px] w-[60vw]  border-4 border-[#DC4492] rounded-lg"
               />
             </div>
           </motion.div>
         ))}
       </div>
-      {/* {projectOpened.id === "youtubeDev" && (
-        <div className=" pt-7 flex flex-col gap-[14rem] ">
-          <div className="flex items-center justify-around flex-wrap gap-[2rem]">
-            <h1 className="text-4xl font-medium underline decoration-[#DC4492]">
-              Light Theme
-            </h1>
-            <img
-              src={"../assets/light-theme-yt-dev.jpg"}
-              alt="Project Photo"
-              className="min-w-[700px] w-[60vw]  border-4 border-[#DC4492] rounded-lg"
-            />
-          </div>
-          <div className="flex flex-row-reverse items-center justify-around">
-            <h1 className="text-4xl font-medium underline decoration-[#2CBCE9]">
-              Dark Theme
-            </h1>
-            <img
-              src={"../assets/dark-theme-yt-dev.jpg"}
-              alt="Project Photo"
-              className="w-[60vw] border-4 border-[#2CBCE9] rounded-lg"
-            />
-          </div>
-          <div className="flex items-center justify-around">
-            <h1 className="text-4xl font-medium underline decoration-[#DC4492]">
-              Caching
-            </h1>
-            <img
-              src={"../assets/caching-search-results-yt-dev.jpg"}
-              alt="Project Photo"
-              className="w-[60vw] border-4 border-[#DC4492] rounded-lg"
-            />
-          </div>
-          <div className="flex flex-row-reverse items-center justify-around">
-            <h1 className="text-4xl font-medium underline decoration-[#2CBCE9]">
-              Choose your Country
-            </h1>
-            <img
-              src={"../assets/country-wise-yt-dev.jpg"}
-              alt="Project Photo"
-              className="w-[60vw] border-4 border-[#2CBCE9] rounded-lg"
-            />
-          </div>
-          <div className="flex items-center justify-around">
-            <h1 className="text-4xl font-medium underline decoration-[#DC4492]">
-              Country-wise Popular Videos
-            </h1>
-            <img
-              src={"../assets/country-wise-results-yt-dev.jpg"}
-              alt="Project Photo"
-              className="w-[60vw] border-4 border-[#DC4492] rounded-lg"
-            />
-          </div>
-          <div className="flex flex-row-reverse items-center justify-around">
-            <h1 className="text-4xl font-medium underline decoration-[#4449dc]">
-              Filters
-            </h1>
-            <img
-              src={"../assets/filters-yt-dev.jpg"}
-              alt="Project Photo"
-              className="w-[60vw] border-4 border-[#4449dc] rounded-lg"
-            />
-          </div>
-        </div>
-      )} */}
-      {/* <p>{projectOpened}</p> */}
     </div>
   );
 };

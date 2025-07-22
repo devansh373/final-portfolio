@@ -1,6 +1,6 @@
 import LineGradient from "../components/LineGradient";
 import { motion } from "framer-motion";
-import { manSvg } from "../constants/manSvg";
+// import { manSvg } from "../constants/manSvg";
 import { useState } from "react";
 import { Link } from "react-router";
 import { givePhotoURL } from "../helper/helper";
@@ -81,7 +81,7 @@ const Projects = () => {
   const projectsList = [
     { title: "YouTube Dev", url: "/project/youtubeDev" },
     { title: "Netflix Ai", url: "/project/netflixAi" },
-    { title: "Project 3", url: "/" },
+    { title: "dev WC", url: "/project/autoCertificateDelivery" },
     { title: "Project 4", url: "/" },
     { title: "Project 5", url: "/" },
     { title: "Project 6", url: "/" },

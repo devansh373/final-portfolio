@@ -4,6 +4,7 @@ import useMediaQuery from "../hooks/useMediaQuery";
 // import { burstSvg } from "../constants/burstSvg";
 // import { circleSVG } from "../constants/circleSVG";
 import { useGhostThemeContext } from "../context/ghostThemeContext";
+import { useNavigate } from "react-router";
 // import ProgressBarSvg from "../components/ProgressBar";
 
 // import {burst} from "../assets/bbburst"
@@ -37,6 +38,7 @@ const Navbar = ({
   const [isHoveredSticker, setIsHoveredSticker] = useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
   const { ghostTheme, toggleGhostTheme } = useGhostThemeContext();
+  const navigate = useNavigate()
 
   // const navbarBackground = ;
 
@@ -99,7 +101,9 @@ const Navbar = ({
             />
             {/* {isDesktop && ( */}
             <button
-              onClick={() => setProjectSection(true)}
+              // onClick={() => setProjectSection(true)}
+              // onClick={() => navigate("/projectsPage")}
+              onClick={() => window.open("/projectsPage", "_blank")}
               className=" cursor-pointer hover:text-amber-500 transition duration-500"
             >
               Projects

@@ -4,10 +4,15 @@ import Stars from '../components/Stars';
 import SpaceshipScene from '../components/Spaceship';
 // import { Image, OrbitControls } from '@react-three/drei';
 import TransparentImagePlane from './TransparentBgImage';
+import { Suspense, useState } from 'react';
+import SplashScreen from './SplashScreen';
 
 const CanvasElement = () => {
     // console.log("canvas")
+     const [isLoaded, setIsLoaded] = useState(false);
   return (
+    <>
+    {!isLoaded && <SplashScreen />}
     <Canvas
               // camera={{ position: [0, 0, 3], fov: 70, rotation: [0, 360, 0] }}
               camera={{ position: [0, 0, 3], fov: 70 }}
@@ -23,7 +28,15 @@ const CanvasElement = () => {
                 />
               </EffectComposer> */}
               <Stars />
-              <SpaceshipScene />
+               <Suspense
+          fallback={
+            // Optional: early Canvas fallback
+            null
+          }
+        >
+
+              <SpaceshipScene  onLoaded={() => setIsLoaded(true)} />
+        </Suspense>
               {/* <> */}
               {/* <OrbitControls enableZoom={false}/> */}
               <TransparentImagePlane/>
@@ -37,6 +50,7 @@ const CanvasElement = () => {
             /> */}
               {/* <BloomLayerOnly/> */}
             </Canvas>
+            </>
   )
 }
 

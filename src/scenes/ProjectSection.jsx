@@ -1,9 +1,11 @@
 // import React from "react";
 // import { FaExternalLinkAlt } from "react-icons/fa";
+import { useNavigate } from "react-router";
 import AnimatedLetters from "../components/LetterAnimation";
 import { glowPathSvg } from "../constants/glowPathSvg";
 
 const ProjectSection = ({ setProjectSection }) => {
+  const navigate = useNavigate()
   return (
     <>
       <div className="w-full flex justify-around items-center gap-[15rem] relative">
@@ -13,7 +15,9 @@ const ProjectSection = ({ setProjectSection }) => {
         <img src="assets/sticker.png" alt="" className="w-[450px] " />
         <div
           className="text-7xl cursor-pointer p-2 bg-pink-600 hover:bg-pink-700 rounded-lg mx-auto flex items-center gap-[1rem] gradientText"
-          onClick={() => setProjectSection(true)}
+          // onClick={() => setProjectSection(true)}
+          // onClick={() => navigate("/projectsPage")}
+          onClick={() => window.open("/projectsPage", "_blank")}
         >
           {/* PROJECTS */}
           <AnimatedLetters text={"PROJECTS"} classParam={"gradientText"} />
@@ -25,7 +29,9 @@ const ProjectSection = ({ setProjectSection }) => {
     bg-gradient-to-r from-purple-600 to-fuchsia-600
     hover:from-fuchsia-600 hover:to-purple-600
     shadow-lg hover:shadow-fuchsia-500/40 transition-all duration-300 cursor-pointer"
-          onClick={() => setProjectSection(true)}
+          // onClick={() => setProjectSection(true)}
+          onClick={() => window.open("/projectsPage", "_blank")}
+
         >
           OPEN
           <svg

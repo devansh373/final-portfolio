@@ -178,7 +178,7 @@ function Body() {
 
   return (
     <>
-      {projectSection ? (
+      {/* {projectSection ? (
         <>
           <ScrollToTop />
           <div
@@ -204,8 +204,8 @@ function Body() {
             
           </div>
           
-        </>
-      ) : (
+        </> */}
+      {/* ) : ( */}
         <div className="app h-screen text-white px-5">
           <Navbar
             isTopOfPage={isTopOfPage}
@@ -391,7 +391,7 @@ function Body() {
           <Footer />
           {/* <ProgressBarSvg /> */}
         </div>
-      )}
+      {/* )} */}
     </>
   );
 }

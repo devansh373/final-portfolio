@@ -12,20 +12,20 @@ import { useGLTF } from "@react-three/drei";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function SpaceshipScene() {
+function SpaceshipScene({onLoaded}) {
   const shipRef = useRef();
   
-  const {scene} = useGLTF("/assets/futuristic_spaceship.glb")
-const scene2 = useGLTF("/assets/spaceship.glb")
+  // const {scene} = useGLTF("/assets/futuristic_spaceship.glb")
+// const scene2 = useGLTF("/assets/spaceship.glb")
   const rawScroll = useRef(0); // 🟡 Raw GSAP scroll value
   const smoothedScroll = useRef(0); // 🟢 Smoothed scroll (inertia value)
 
 
-  useEffect(()=>{
-    // console.log(scene)
-    console.log(useGLTF("/assets/futuristic_spaceship.glb"));
-    console.log(scene2);
-  },[])
+  // useEffect(()=>{
+  //   // console.log(scene)
+  //   console.log(useGLTF("/assets/futuristic_spaceship.glb"));
+  //   console.log(scene2);
+  // },[])
   const curve = useMemo(() => {
     return new THREE.CatmullRomCurve3([
       new THREE.Vector3(0, 0, 0),
@@ -129,14 +129,14 @@ const scene2 = useGLTF("/assets/spaceship.glb")
 
       {/* Spaceship */}
        <group ref={shipRef}>
-        <primitive object={scene} scale={0.1} rotation={[Math.PI/9, 0, 0]} position={[0, -10, -30]}/> 
+        {/* <primitive object={scene} scale={0.1} rotation={[Math.PI/9, 0, 0]} position={[0, -10, -30]}/>  */}
         
         
       </group>
 
       <Project />
       
-      <UFOModel camera={camera}/>
+      <UFOModel camera={camera} onLoaded={onLoaded}/>
       
       <NeonModel camera={camera}/>
       

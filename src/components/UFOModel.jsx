@@ -6,7 +6,7 @@ import gsap from "gsap";
 
 // useGLTF.preload("/assets/vampire_glow_bat.glb");
 
-export default function UFOModel({ camera,loadModel=true }) {
+export default function UFOModel({ camera,loadModel=true,onLoaded }) {
   
   const { scene, animations } = useGLTF("/assets/vampire_glow_bat.glb");
   // const {scene} = useGLTF("/assets/neonringani.glb");
@@ -16,6 +16,9 @@ export default function UFOModel({ camera,loadModel=true }) {
 
   const { actions } = useAnimations(animations, ref);
 
+   useEffect(() => {
+    if (onLoaded) onLoaded(); // ✅ Notify parent that loading is complete
+  }, [scene, onLoaded]);
   // useEffect(() => {
   //   console.log(scene);
   //   console.log(useGLTF("/assets/vampire_glow_bat.glb"));

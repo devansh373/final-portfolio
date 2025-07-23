@@ -4,12 +4,12 @@ import useMediaQuery from "../hooks/useMediaQuery";
 // import { burstSvg } from "../constants/burstSvg";
 // import { circleSVG } from "../constants/circleSVG";
 import { useGhostThemeContext } from "../context/ghostThemeContext";
-import { useNavigate } from "react-router";
+import { Link, useNavigate } from "react-router";
 // import ProgressBarSvg from "../components/ProgressBar";
 
 // import {burst} from "../assets/bbburst"
 
-const Link = ({ page, selectedPage, setSelectedPage }) => {
+const CustomLink = ({ page, selectedPage, setSelectedPage }) => {
   const lowerCasePage = page.toLowerCase();
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -73,34 +73,34 @@ const Navbar = ({
         {/* DESKTOP NAV */}
         {isDesktop ? (
           <div className="flex justify-between gap-16 font-opensans text-sm font-semibold">
-            <Link
+            <CustomLink
               page="Home"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            <Link
+            <CustomLink
               page="Skills"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            {/* <Link
+            {/* <CustomLink
               page="Projects"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
               setProjectSection={setProjectSection}
             />
-            <Link
+            <CustomLink
               page="Testimonials"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             /> */}
-            <Link
+            <CustomLink
               page="Contact"
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
             {/* {isDesktop && ( */}
-            <button
+            <Link to={"/projectsPage"} target="_blank"
               // onClick={() => setProjectSection(true)}
               // onClick={() => navigate("/projectsPage")}
               onClick={() => window.open("/projectsPage", "_blank")}
@@ -108,7 +108,7 @@ const Navbar = ({
             >
               Projects
               {/* {ghostTheme ? "Normal Theme" : "Ghost Theme"} */}
-            </button>
+            </Link>
             {/* )} */}
           </div>
         ) : (
@@ -132,27 +132,27 @@ const Navbar = ({
 
             {/* MENU ITEMS */}
             <div className="flex flex-col items-start gap-10 w-full text-center p-4 text-2xl text-[#010026]">
-              <Link
+              <CustomLink
                 page="Home"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-              <Link
+              <CustomLink
                 page="Skills"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-              <Link
+              <CustomLink
                 page="Projects"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               />
-              {/* <Link
+              {/* <CustomLink
                 page="Testimonials"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}
               /> */}
-              <Link
+              <CustomLink
                 page="Contact"
                 selectedPage={selectedPage}
                 setSelectedPage={setSelectedPage}

@@ -103,7 +103,7 @@ const Navbar = ({
             <Link to={"/projectsPage"} target="_blank"
               // onClick={() => setProjectSection(true)}
               // onClick={() => navigate("/projectsPage")}
-              onClick={() => window.open("/projectsPage", "_blank")}
+              // onClick={() => window.open("/projectsPage", "_blank")}
               className=" cursor-pointer hover:text-amber-500 transition duration-500"
             >
               Projects

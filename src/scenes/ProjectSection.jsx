@@ -20,13 +20,13 @@ const ProjectSection = ({ setProjectSection }) => {
           // onClick={() => window.open("/projectsPage", "_blank")}
         >
           {/* PROJECTS */}
-          <Link to={"/projectsPage"} target="_blank">
+          <Link to={"/projectsPage"}>
           <AnimatedLetters text={"PROJECTS"} classParam={"gradientText"} />
           </Link>
         </div>
       </div>
       <div className=" w-full flex justify-end absolute right-[25%] top-[70%]">
-        <Link to={"/projectsPage"} target="_blank"
+        <Link to={"/projectsPage"}
           class="group flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-semibold 
     bg-gradient-to-r from-purple-600 to-fuchsia-600
     hover:from-fuchsia-600 hover:to-purple-600

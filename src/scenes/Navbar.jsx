@@ -100,7 +100,7 @@ const Navbar = ({
               setSelectedPage={setSelectedPage}
             />
             {/* {isDesktop && ( */}
-            <Link to={"/projectsPage"} target="_blank"
+            <Link to={"/projectsPage"}
               // onClick={() => setProjectSection(true)}
               // onClick={() => navigate("/projectsPage")}
               // onClick={() => window.open("/projectsPage", "_blank")}

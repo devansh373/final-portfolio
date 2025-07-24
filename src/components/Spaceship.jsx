@@ -136,7 +136,7 @@ function SpaceshipScene({onLoaded}) {
 
       <Project />
       
-      <UFOModel camera={camera} onLoaded={onLoaded}/>
+      {/* <UFOModel camera={camera} onLoaded={onLoaded}/> */}
       
       <NeonModel camera={camera}/>
       

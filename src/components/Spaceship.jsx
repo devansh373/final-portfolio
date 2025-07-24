@@ -138,7 +138,7 @@ function SpaceshipScene({onLoaded}) {
       
       {/* <UFOModel camera={camera} onLoaded={onLoaded}/> */}
       
-      <NeonModel camera={camera}/>
+      <NeonModel camera={camera} onLoaded={onLoaded}/>
       
     </>
   );

@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { useRef, useEffect, useMemo } from "react";
 
-export default function NeonRings() {
+export default function NeonRings({onLoaded}) {
   const gltf = useGLTF("/assets/neonringani.glb");
   const { camera } = useThree();
 
@@ -65,6 +65,11 @@ export default function NeonRings() {
       });
     });
   });
+
+   useEffect(() => {
+    if (onLoaded) onLoaded(); // ✅ Notify parent that loading is complete
+  }, [gltf.scene, onLoaded]);
+
 
   return (
     <>

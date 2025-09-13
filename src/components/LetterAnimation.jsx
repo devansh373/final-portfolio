@@ -95,7 +95,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const AnimatedLetters = ({ text, classParam }) => {
+const AnimatedLetters = ({ text, classParam,isDevansh=false }) => {
   const lettersRef = useRef([]);
   const containerRef = useRef(null);
 
@@ -156,15 +156,21 @@ lettersRef.current.forEach((el) => {
   return (
     <h1
       ref={containerRef}
-      className={`${classParam && classParam} text-white w-full opacity-100`}
+      className={` text-white w-full opacity-100`}
+
+
     >
       {text.split("").map((char, i) => (
         <span
           key={i}
           ref={(el) => (lettersRef.current[i] = el)}
-          className={"inline-block " + classParam}
+          className={"inline-block relative group ml-4 " + classParam}
         >
           {char === " " ? "\u00A0" : char}
+          {isDevansh &&<div
+              className="absolute w-17 h-17 bg-red-400 rounded-full -z-1 top-3 left-3 transition duration-100 ease-in scale-0 group-hover:scale-100"
+              
+            ></div>}
         </span>
       ))}
     </h1>

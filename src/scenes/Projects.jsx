@@ -31,8 +31,8 @@ const Project = ({ title, url, hoveredProject, setHoveredProject }) => {
 
   const sizeClass = isHovered
     ? "w-[400px] h-[400px]"
-    : hoveredProject
-    ? "w-[300px] h-[300px]"
+    // : hoveredProject
+    // ? "w-[300px] h-[300px]"
     : "w-[300px] h-[300px]";
 
   return (
@@ -50,12 +50,12 @@ const Project = ({ title, url, hoveredProject, setHoveredProject }) => {
       
       onMouseEnter={() => setHoveredProject(title)}
       onMouseLeave={() => setHoveredProject(null)}
-      className={`relative  rounded-lg ${sizeClass} min-w-[200px] min-h-[200px]`}
+      className={`relative  rounded-lg ${sizeClass} group min-w-[200px] min-h-[200px] overflow-hidden`}
     >
       <Link
         to={url}
         className="absolute h-full w-full opacity-0 hover:opacity-90 transition duration-500
-          z-30 flex flex-col justify-center items-center text-center p-10 cursor-pointer rounded-lg font-medium text-[#2CBCE9] bg-[#ededed]"
+          z-30 flex flex-col justify-center items-center text-center p-10 cursor-pointer rounded-lg font-medium text-white bg-black/60"
       >
         <p className="text-2xl font-playfair">
           {title?.includes("Project") ? "Dummy Project" : title}
@@ -65,7 +65,7 @@ const Project = ({ title, url, hoveredProject, setHoveredProject }) => {
       <img
         src={givePhotoURL(title)}
         alt={title}
-        className="w-full h-full object-cover rounded-lg"
+        className="w-full h-full object-cover rounded-lg scale-130 group-hover:scale-100 transition duration-400"
       />
     </motion.div>
   );
@@ -81,7 +81,7 @@ const Projects = () => {
   const projectsList = [
     { title: "YouTube Dev", url: "/project/youtubeDev" },
     { title: "Netflix Ai", url: "/project/netflixAi" },
-    { title: "dev WC", url: "/project/autoCertificateDelivery" },
+    { title: "Dev WC", url: "/project/autoCertificateDelivery" },
     { title: "Project 4", url: "/" },
     { title: "Project 5", url: "/" },
     { title: "Project 6", url: "/" },
@@ -89,7 +89,7 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="pt-48 pb-48">
+    <section id="projects" className="pt-21 pb-48">
       {/* HEADINGS */}
       <motion.div
         className="md:w-2/5 mx-auto text-center"
@@ -111,14 +111,14 @@ const Projects = () => {
           </div>
         </div>
         <p className="mt-10 mb-10">
-          Following are the projects I made as a Front End Developer:
+          Following are the projects I made as a Full Stack Developer:
         </p>
       </motion.div>
 
       {/* PROJECTS */}
-      <div className="flex justify-center w-full sm:pl-[10rem] pl-[2rem]">
+      <div className="flex justify-center w-full sm:pl-[15rem] pl-[2rem]">
         <motion.div
-          className="flex flex-wrap gap-[8rem] sm:gap-[2rem] rounded-lg"
+          className="flex flex-wrap gap-[8rem] sm:gap-[4rem] rounded-lg"
           variants={container}
           initial="hidden"
           whileInView="visible"

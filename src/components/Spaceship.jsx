@@ -9,10 +9,12 @@ import NeonModel from "./NeonModel";
 import Project from "./Project";
 import UFOModel from "./UFOModel";
 import { useGLTF } from "@react-three/drei";
+import { useGhostThemeContext } from "../context/ghostThemeContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 function SpaceshipScene({onLoaded}) {
+  const {ghostTheme} = useGhostThemeContext()
   const shipRef = useRef();
   
   // const {scene} = useGLTF("/assets/futuristic_spaceship.glb")
@@ -50,6 +52,18 @@ function SpaceshipScene({onLoaded}) {
     });
     // console.log(model)
   }, []);
+  useEffect(() => {
+  if (ghostTheme) {
+    // disable scroll
+    ScrollTrigger.getAll().forEach((st) => st.disable());
+    document.body.style.overflow = "hidden"; // lock native scroll
+  } else {
+    // re-enable scroll
+    ScrollTrigger.getAll().forEach((st) => st.enable());
+    document.body.style.overflow = "auto";
+  }
+}, [ghostTheme]);
+
   
   const { camera, size } = useThree();
 
@@ -62,7 +76,7 @@ function SpaceshipScene({onLoaded}) {
 
   useFrame(() => {
     
-
+if(ghostTheme)return
     if (htmlRef.current?.group) {
       const group = htmlRef.current.group;
 
@@ -134,9 +148,9 @@ function SpaceshipScene({onLoaded}) {
         
       </group>
 
-      <Project />
+      <Project camera={camera}/>
       
-      {/* <UFOModel camera={camera} onLoaded={onLoaded}/> */}
+      <UFOModel camera={camera} onLoaded={onLoaded}/>
       
       <NeonModel camera={camera} onLoaded={onLoaded}/>
       

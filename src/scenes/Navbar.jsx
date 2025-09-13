@@ -99,17 +99,13 @@ const Navbar = ({
               selectedPage={selectedPage}
               setSelectedPage={setSelectedPage}
             />
-            {/* {isDesktop && ( */}
-            <Link to={"/projectsPage"}
-              // onClick={() => setProjectSection(true)}
-              // onClick={() => navigate("/projectsPage")}
-              // onClick={() => window.open("/projectsPage", "_blank")}
-              className=" cursor-pointer hover:text-amber-500 transition duration-500"
-            >
-              Projects
-              {/* {ghostTheme ? "Normal Theme" : "Ghost Theme"} */}
-            </Link>
-            {/* )} */}
+            <CustomLink
+              page="Projects"
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
+            
+            
           </div>
         ) : (
           <button

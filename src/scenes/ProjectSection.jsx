@@ -8,24 +8,24 @@ const ProjectSection = ({ setProjectSection }) => {
   const navigate = useNavigate()
   return (
     <>
-      <div className="w-full flex justify-around items-center gap-[15rem] relative">
+      <div className="w-full flex justify-around items-center gap-[1rem] pl-50 relative">
         {/* {glowPathSvg} */}
 
         {" "}
         <img src="assets/sticker.png" alt="" className="w-[450px] " />
         <div
-          className="text-7xl cursor-pointer p-2 bg-pink-600 hover:bg-pink-700 rounded-lg mx-auto flex items-center gap-[1rem] gradientText"
+          className="text-8xl cursor-pointer p-2 rounded-lg mx-auto flex flex-col items-center gap-[1rem] tracking-widest"
           // onClick={() => setProjectSection(true)}
           // onClick={() => navigate("/projectsPage")}
           // onClick={() => window.open("/projectsPage", "_blank")}
         >
           {/* PROJECTS */}
           <Link to={"/projectsPage"}>
-          <AnimatedLetters text={"PROJECTS"} classParam={"gradientText"} />
+          <h1 className="text-center">3D</h1>
+          {/* <h1>PROJECTS</h1> */}
+          {/* <AnimatedLetters text={"PROJECTS"} classParam={"gradientText"} /> */}
           </Link>
-        </div>
-      </div>
-      <div className=" w-full flex justify-end absolute right-[25%] top-[70%]">
+           <div className=" w-full flex justify-center text-2xl tracking-normal">
         <Link to={"/projectsPage"}
           class="group flex items-center gap-2 px-5 py-2.5 rounded-xl text-white font-semibold 
     bg-gradient-to-r from-purple-600 to-fuchsia-600
@@ -53,10 +53,12 @@ const ProjectSection = ({ setProjectSection }) => {
           </svg>
         </Link>
 
-        {/* <button className=" flex gap-[1rem] items-center bg-purple-700 w-[100px] justify-center p-2 rounded-lg cursor-pointer hover:bg-purple-800">
-          OPEN<FaExternalLinkAlt />
-          </button> */}
+       
       </div>
+        </div>
+       
+      </div>
+      
     </>
   );
 };

@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { useRef, useEffect, useMemo } from "react";
 
-export default function NeonRings({onLoaded}) {
+export default function NeonRings({ onLoaded }) {
   const gltf = useGLTF("/assets/neonringani.glb");
   const { camera } = useThree();
 
@@ -11,12 +11,12 @@ export default function NeonRings({onLoaded}) {
 
   const positions = useMemo(
     () => [
-      [-1, 1, -10],
-      [-7, 1, -40],
-      [-5, 1, -90],
-      [6, 1, -130],
-      [8, 1, -170],
-      [3, 0, -200],
+      [-1, 0, -10],
+      [0, 0, -130],
+      [-3, 0, -230],
+      [6,  0, -330],
+      [8,  0, -450],
+      [3, 0, -530],
     ],
     []
   );
@@ -41,7 +41,7 @@ export default function NeonRings({onLoaded}) {
   // 🚀 Animate emissive color based on camera distance
   useFrame(() => {
     let closestIndex = -1;
-    let closestDistance = 10;
+    let closestDistance = 40;
 
     ringRefs.current.forEach((ref, index) => {
       if (!ref) return;
@@ -66,10 +66,9 @@ export default function NeonRings({onLoaded}) {
     });
   });
 
-   useEffect(() => {
+  useEffect(() => {
     if (onLoaded) onLoaded(); // ✅ Notify parent that loading is complete
   }, [gltf.scene, onLoaded]);
-
 
   return (
     <>
@@ -77,12 +76,53 @@ export default function NeonRings({onLoaded}) {
         <primitive
           key={index}
           object={clone}
-          scale={3}
+          scale={16}
           position={pos}
-          rotation={[0, Math.PI / 2, 0]}
+          rotation={[3, Math.PI / 2, 0]}
           ref={(el) => (ringRefs.current[index] = el)}
         />
       ))}
     </>
   );
 }
+
+// import { useGLTF, Instances, Instance } from "@react-three/drei";
+// import { useEffect, useState } from "react";
+
+// export default function NeonRings({ onLoaded=true }) {
+//   const gltf = useGLTF("/assets/neonringani.glb");
+//   // console.log()
+//   console.log(gltf)
+
+//   const positions = [
+//     [-1, 1, -10],
+//     [-7, 1, -40],
+//     [-5, 1, -90],
+//     [6, 1, -130],
+//     [8, 1, -170],
+//     [3, 0, -200],
+//   ];
+// const [mesh,setMesh] = useState();
+//   // const mesh = Object.values(gltf.nodes).find((n) => n.isMesh);
+//   useEffect(()=>{
+//      setMesh(Object.values(gltf.nodes).find((n) => n.isMesh));
+
+//   },[])
+//   return (
+//     <Instances
+//       geometry={mesh?.geometry}
+//       material={mesh?.material}
+//       // geometry={gltf.nodes.Object_6.geometry}
+//       // material={gltf.nodes.Object_6.material}
+//     >
+//       {positions.map((pos, i) => (
+//         <Instance
+//           key={i}
+//           position={pos}
+//           scale={3}
+//           rotation={[0, Math.PI / 2, 0]}
+//         />
+//       ))}
+//     </Instances>
+//   );
+// }

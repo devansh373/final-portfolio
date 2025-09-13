@@ -299,7 +299,7 @@ const MySkills = () => {
           </div>
         </section>
       ) : (
-        <div ref={skillsRef} className="h-auto flex flex-col items-center overflow-hidden">
+        <div ref={skillsRef} id="skills" className="h-auto flex flex-col items-center overflow-hidden">
           <h1 className="text-center text-3xl underline p-5">Tech stack</h1>
           <div className="relative flex flex-col gap-[12rem] mt-[5rem]">
             {svgs.map((svg, index) => (

@@ -491,7 +491,7 @@ const ProjectDetails = () => {
           {/* Live URL */}
           <motion.div className="mb-10" variants={itemVariants}>
             <h2 className="text-3xl  mb-6 text-blue-400">Live Demo</h2>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-center sm:justify-start flex-wrap gap-4">
               <a
                 href={projectOpened.liveUrl}
                 target="_blank"
@@ -526,7 +526,7 @@ const ProjectDetails = () => {
                   />
                 </svg>
               </a>
-              <div className="text-gray-400 text-sm">
+              <div className="text-gray-400 text-sm text-center sm:text-left">
                 {projectOpened.liveUrl}
               </div>
             </div>

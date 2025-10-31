@@ -30,7 +30,7 @@ const Footer = () => {
             initial={{ scale: 0, opacity: 0 }}
             animate={isInView ? { scale: 1, opacity: 1 } : {}}
             transition={{ duration: 0.6, ease: "backOut" }}
-            className={`w-[350px] ${isAboveLarge?"mt-[-140px]":"mt-[50px]"} dropShadowClass`}
+            className={`w-[350px] ${isAboveLarge?"mt-[-140px]":"mt-[20px]"} dropShadowClass`}
           />
         </div>
       </div>

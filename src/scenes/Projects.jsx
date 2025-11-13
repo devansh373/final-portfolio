@@ -79,9 +79,9 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projectsList = [
+    { title: "Fintrade Ai", url: "/project/tradingAi" },
     { title: "YouTube Dev", url: "/project/youtubeDev" },
     { title: "Netflix Ai", url: "/project/netflixAi" },
-    { title: "Dev WC", url: "/project/autoCertificateDelivery" },
     { title: "Project 4", url: "/" },
     { title: "Project 5", url: "/" },
     { title: "Project 6", url: "/" },

@@ -232,6 +232,38 @@ const ProjectDetails = () => {
         },
       ],
     },
+     {
+      id: "tradingAi",
+      name: "Ai Powered Trading Website",
+      liveUrl: "https://dev-fintrade-app.netlify.app/",
+      description:
+        "A trading website to buy/sell stocks with powers of AI Chatbot.",
+      techStack: ["Frontend- React+Next", "Backend- Node+MongoDB+PostgreSQL",],
+      category: "Full Stack Application",
+      duration: "Ongoing",
+      features: [
+        {
+          photoUrl: "../assets/products-page.webp",
+          title: "FinnHub Products",
+        },
+        {
+          photoUrl: "../assets/product-details.webp",
+          title: "Product + News Sentiment Details",
+        },
+        // {
+        //   photoUrl: "../assets/form_creation.avif",
+        //   title: "Dynamic Form Creation",
+        // },
+        // {
+        //   photoUrl: "../assets/All_templates.avif",
+        //   title: "Certificate Templates",
+        // },
+        // {
+        //   photoUrl: "../assets/dynamic-placement-drag.avif",
+        //   title: "Drag & Drop Field Placement",
+        // },
+      ],
+    },
     {
       id: "youtubeDev",
       name: "Youtube Dev",
@@ -318,38 +350,7 @@ const ProjectDetails = () => {
         },
       ],
     },
-    {
-      id: "autoCertificateDelivery",
-      name: "Auto Certificate Delivery Workshop",
-      liveUrl: "https://workshop-certificates-56fb5.firebaseapp.com/",
-      description:
-        "A comprehensive workshop feedback system with automatic certificate generation and delivery via email.",
-      techStack: ["Frontend- React", "Backend- Firebase",],
-      category: "Full Stack Application",
-      duration: "4 weeks",
-      features: [
-        {
-          photoUrl: "../assets/dev-WC-homepage.avif",
-          title: "Secure Admin Login",
-        },
-        {
-          photoUrl: "../assets/Admin_Dashboard.avif",
-          title: "Comprehensive Admin Dashboard",
-        },
-        {
-          photoUrl: "../assets/form_creation.avif",
-          title: "Dynamic Form Creation",
-        },
-        {
-          photoUrl: "../assets/All_templates.avif",
-          title: "Certificate Templates",
-        },
-        {
-          photoUrl: "../assets/dynamic-placement-drag.avif",
-          title: "Drag & Drop Field Placement",
-        },
-      ],
-    },
+   
   ];
 
   const projectOpened = projectDetails.find((project) => project.id === id);

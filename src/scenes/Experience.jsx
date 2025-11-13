@@ -4,22 +4,12 @@ const Experience = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const internships = [
+  
     {
       id: 1,
-      company: "OutriX",
-      role: "Frontend Developer Intern",
-      duration: "Jun 2025 - Aug 2025",
-      location: "Remote",
-      description:
-        "Developed responsive web applications using React and TypeScript. Collaborated with design team to implement pixel-perfect UI components.",
-      skills: ["React", "TypeScript", "Tailwind CSS", "Git"],
-      color: "from-purple-500 to-pink-500",
-    },
-    {
-      id: 2,
       company: "Minimalistic Technology",
       role: "Software Developer",
-      duration: "Aug 2025 - Present",
+      duration: "May 2025 - Oct 2025",
       location: "Remote",
       description:
         "Built and handled Client Projects from scratch. Gained hands-on experience in Software Development tech stack including Next js, Typescript, Node js, MongoDB.",

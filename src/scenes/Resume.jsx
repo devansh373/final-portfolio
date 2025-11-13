@@ -182,8 +182,8 @@ const Resume = () => {
           variants={itemVariants}
         >
           <motion.a
-            // href="https://drive.google.com/file/d/1fK-X6abx5N0NZsmV9M-qq3DaYbQF9F5_/view?usp=sharing"
-            href="https://drive.google.com/file/d/1kIT_kwqcSdN3_1CS9rIdsPXS-f6FDYm3/view?usp=sharing"
+            
+            href="https://drive.google.com/file/d/1Hioaxd8m_0fE90kEIcSDXzUUCHRkdf3_/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold 

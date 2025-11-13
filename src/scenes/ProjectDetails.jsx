@@ -452,7 +452,7 @@ const ProjectDetails = () => {
             </span>
           </div>
 
-          <h1 className="text-5xl md:text-7xl  mb-6 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-7xl  mb-6 py-3 bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
             {projectOpened.name}
           </h1>
 

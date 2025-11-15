@@ -64,7 +64,8 @@ const CanvasElement = () => {
         {/* <UFOModel camera={camera}/> */}
         {/* <Environment files={"/assets/image_processing20250429-2-2yup8h.jpg"} background/> */}
         <Environment
-          files={"/assets/colorful-rainbow-appearing-sky-nature-landscape.jpg"}
+          // files={"/assets/colorful-rainbow-appearing-sky-nature-landscape.jpg"}
+          files={"https://res.cloudinary.com/dev-tech/image/upload/v1763219016/colorful-rainbow-appearing-sky-nature-landscape_11zon_id8yw1.jpg"}
           // files={"/assets/the_sky_is_on_fire_4k.hdr"}
           background
         />

@@ -219,14 +219,16 @@ const MySkills = () => {
             <span style={{ color: `${ccolor}`, fontSize: "1.8rem" }}>
               <Typewriter
                 words={[
+                  "<Next.js",
                   "<React",
-                  "<Redux",
-                  "<Javascript",
-                  "<HTML",
-                  "<CSS",
-                  "<Tailwind",
-                  "<Rest API",
-                  "<Svg",
+                  "<TypeScript",
+                  "<Node.js",
+                  "<PostgreSQL",
+                  "<Prisma",
+                  "<Tailwind CSS",
+                  "<Gemini API",
+                  "<LangChain",
+                  "<Framer Motion",
                 ]}
                 loop={0}
                 cursor

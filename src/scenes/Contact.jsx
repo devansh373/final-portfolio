@@ -107,7 +107,7 @@ const Contact = () => {
           <form
             target="_blank"
             onSubmit={onSubmit}
-            action="https://formsubmit.co/14ed025d7047f2fb8c1a57b30ef1c631 "
+            action={import.meta.env.VITE_CONTACT_FORM_ENDPOINT}
             method="POST"
           >
             <input

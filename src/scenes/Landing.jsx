@@ -748,12 +748,7 @@ const Landing = ({ setSelectedPage }) => {
                 ${isAboveMedium ? "text-base" : "text-sm"}
               `}
               >
-                Passionate Software Developer specializing in React with a
-                strong understanding of Javascript, building robust web
-                applications with data management using Redux and smooth user
-                experience using Tailwind CSS and animation libraries like
-                Framer Motion and GSAP. Creating dynamic UI by fetching data
-                through RESTful APIs. Developed and maintained client projects from scratch with payment gateways.
+                Passionate Software Developer, specialized in building high-concurrency multi-tenant SaaS platforms and scalable e-commerce solutions. Expert in the Next.js and Node.js ecosystem, with deep expertise in optimizing server-side processing and integrating AI-powered features using LangChain and Gemini API. Committed to engineering robust, performant web applications with seamless user experiences.
               </p>
             </div>
           </div>

@@ -4,16 +4,22 @@ const Experience = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
 
   const internships = [
-  
     {
       id: 1,
-      company: "Minimalistic Technology",
-      role: "Software Developer",
-      duration: "May 2025 - Oct 2025",
-      location: "Remote",
-      description:
-        "Built and handled Client Projects from scratch. Gained hands-on experience in Software Development tech stack including Next js, Typescript, Node js, MongoDB.",
-      skills: ["Next.js", "Redux", "Node js", "MongoDB"],
+      company: "TheTechnoLabs",
+      role: "Software Developer Intern",
+      duration: "Oct 2025 - March 2026",
+      location: "Delhi",
+      description: `Architected a high-concurrency multi-tenant SaaS platform for ID card management and engineered an automated PDF imposition engine. 
+        Developed a scalable e-commerce platform with secure payment gateway integration and real-time inventory control dashboards.`,
+      skills: [
+        "Next.js",
+        "Node.js",
+        "Prisma",
+        "PostgreSQL",
+        "MongoDB",
+        "Razorpay",
+      ],
       color: "from-cyan-500 to-blue-500",
     },
     // {

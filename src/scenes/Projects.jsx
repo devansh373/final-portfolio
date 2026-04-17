@@ -79,13 +79,12 @@ const Projects = () => {
   const [hoveredProject, setHoveredProject] = useState(null);
 
   const projectsList = [
-    { title: "Fintrade Ai", url: "/project/tradingAi" },
-    { title: "YouTube Dev", url: "/project/youtubeDev" },
-    { title: "Netflix Ai", url: "/project/netflixAi" },
+    { title: "School ID Print System", url: "/project/schoolIdSystem" },
+    { title: "Books Store ERP", url: "/project/booksStore" },
+    { title: "AI Stock Simulator", url: "/project/stockSimulator" },
     { title: "Project 4", url: "/" },
     { title: "Project 5", url: "/" },
     { title: "Project 6", url: "/" },
-    // { title: "Project 7", url: "/" },
   ];
 
   return (

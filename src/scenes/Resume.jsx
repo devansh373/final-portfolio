@@ -110,7 +110,7 @@ const Resume = () => {
                   <div className="flex flex-col items-center space-y-3">
                     <div className="w-16 h-16 rounded-full overflow-hidden border-2 border-cyan-400 shadow-lg">
                       <img
-                        src="/assets/fotor-20241111204342.webp"
+                        src={import.meta.env.VITE_HEADSHOT_URL}
                         alt="Professional headshot"
                         className="w-full h-full object-cover"
                       />
@@ -183,7 +183,7 @@ const Resume = () => {
         >
           <motion.a
             
-            href="https://drive.google.com/file/d/1Hioaxd8m_0fE90kEIcSDXzUUCHRkdf3_/view?usp=sharing"
+            href={import.meta.env.VITE_RESUME_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="group flex items-center gap-3 px-8 py-4 rounded-xl text-white font-semibold 

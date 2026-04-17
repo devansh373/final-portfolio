@@ -21,7 +21,7 @@ const Footer = () => {
       <SocialMediaIcons/>
         <div className="md:flex justify-center items-start md:justify-between text-center ">
           <p className="font-playfair font-semibold text-3xl text-[#FDCC49]">
-            Devansh Raghav
+            {import.meta.env.VITE_USER_NAME}
           </p>
 
           <motion.img

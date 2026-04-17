@@ -207,150 +207,116 @@ const ProjectDetails = () => {
 
   const projectDetails = [
     {
-      id: "devPortfolio",
-      name: "Dev Portfolio",
-      liveUrl: "https://dev-final-portfolio.netlify.app/",
+      id: "schoolIdSystem",
+      name: "School ID Print System",
+      liveUrl: import.meta.env.VITE_PROJECT_1_LIVE_URL,
       description:
-        "This is my portfolio website where all my projects are listed. It is a showcase of my frontend skills.",
+        "Architected a high-concurrency multi-tenant SaaS platform for vendors to manage and print identity cards across hundreds of schools. The system ensures strict data isolation and role-based access control (RBAC).",
       techStack: [
-        "React",
-        "Tailwind CSS",
-        "Framer Motion",
-        "GSAP",
-        "JavaScript",
+        "Next.js",
+        "Node.js",
+        "Prisma",
+        "PostgreSQL",
+        "ImageKit",
+        "Node-Canvas",
+        "PDFKit",
       ],
-      category: "Frontend Development",
-      duration: "2 weeks",
+      category: "Full Stack SaaS Platform",
+      // duration: "1 month",
       features: [
         {
-          photoUrl: "../assets/portfolio-hero.avif",
-          title: "Modern Hero Section",
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Multi-tenant+Architecture",
+          title: "Multi-tenant SaaS Architecture",
         },
         {
-          photoUrl: "../assets/portfolio-projects.avif",
-          title: "Interactive Projects Gallery",
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Image+Processing+Pipeline",
+          title: "Server-side Image Processing",
+        },
+        {
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=PDF+Imposition+Engine",
+          title: "Automated PDF Imposition",
+        },
+        {
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Print+Queue+Management",
+          title: "Real-time Print Queue",
         },
       ],
     },
-     {
-      id: "tradingAi",
-      name: "Ai Powered Trading Website",
-      liveUrl: "https://dev-fintrade-app.netlify.app/",
+    {
+      id: "booksStore",
+      name: "Books Store ERP",
+      liveUrl: import.meta.env.VITE_PROJECT_2_LIVE_URL,
       description:
-        "A trading website to buy/sell stocks with powers of AI Chatbot.",
-      techStack: ["Frontend- React+Next", "Backend- Node+MongoDB+PostgreSQL",],
-      category: "Full Stack Application",
+        "A scalable e-commerce platform featuring a storefront with optimized category browsing, shopping cart, and secure Razorpay payment gateway integration. Built a feature-rich Admin ERP Dashboard for real-time inventory control.",
+      techStack: [
+        "Next.js",
+        "Tailwind CSS",
+        "Node.js",
+        "MongoDB",
+        "Razorpay",
+        "Chart.js",
+        "JWT",
+      ],
+      category: "E-Commerce & ERP",
+      // duration: "3 months",
+      features: [
+        {
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Storefront+UI",
+          title: "Optimized E-Commerce Storefront",
+        },
+        {
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Admin+Dashboard",
+          title: "Admin ERP Dashboard",
+        },
+        {
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Payment+Integration",
+          title: "Razorpay Gateway Integration",
+        },
+        {
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Sales+Analytics",
+          title: "Data Visualization & Analytics",
+        },
+      ],
+    },
+    {
+      id: "stockSimulator",
+      name: "AI Stock Simulator",
+      liveUrl: import.meta.env.VITE_PROJECT_3_LIVE_URL,
+      description:
+        "Full-stack AI-powered stock trading simulator with a Next.js frontend and Node.js backend handling secure authentication, portfolio management, and trade execution logic. Integrated Finnhub API for real-time market data.",
+      techStack: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "MongoDB",
+        "Prisma",
+        "Finnhub API",
+        "Gemini API",
+        "LangChain",
+        "ChromaDB",
+      ],
+      category: "AI-Powered FinTech",
       duration: "Ongoing",
       features: [
         {
-          photoUrl: "../assets/products-page.webp",
-          title: "FinnHub Products",
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Market+Data+Dashboard",
+          title: "Real-time Market Data",
         },
         {
-          photoUrl: "../assets/product-details.webp",
-          title: "Product + News Sentiment Details",
-        },
-        // {
-        //   photoUrl: "../assets/form_creation.avif",
-        //   title: "Dynamic Form Creation",
-        // },
-        // {
-        //   photoUrl: "../assets/All_templates.avif",
-        //   title: "Certificate Templates",
-        // },
-        // {
-        //   photoUrl: "../assets/dynamic-placement-drag.avif",
-        //   title: "Drag & Drop Field Placement",
-        // },
-      ],
-    },
-    {
-      id: "youtubeDev",
-      name: "Youtube Dev",
-      liveUrl: "https://dev-yt.netlify.app/",
-      description:
-        "This is a responsive clone of Youtube which uses Live Youtube Data Api and have features like search functionality, debouncing of 200ms, colour theme switch.",
-      techStack: [
-        "HTML",
-        "CSS",
-        "JavaScript",
-        "React",
-        "Tailwind CSS",
-        "Redux",
-      ],
-      category: "Full Stack Application",
-      duration: "3 weeks",
-      disclaimer:
-        "Some functionalities may not work due to CORS policy as the api is the original Youtube Data Api",
-      features: [
-        {
-          photoUrl: "../assets/light-theme-yt-dev.avif",
-          title: "Light Theme",
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=AI+Sentiment+Analysis",
+          title: "AI News Sentiment Analysis",
         },
         {
-          photoUrl: "../assets/dark-theme-yt-dev.avif",
-          title: "Dark Theme",
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=AI+Chatbot",
+          title: "AI Financial Chatbot",
         },
         {
-          photoUrl: "../assets/caching-search-results-yt-dev.avif",
-          title: "Intelligent Caching",
-        },
-        {
-          photoUrl: "../assets/country-wise-yt-dev.avif",
-          title: "Choose Your Country",
-        },
-        {
-          photoUrl: "../assets/country-wise-results-yt-dev.avif",
-          title: "Country-wise Popular Videos",
-        },
-        {
-          photoUrl: "../assets/filters-yt-dev.avif",
-          title: "Advanced Filters",
-        },
-        {
-          photoUrl: "../assets/nested-comments-yt-dev.avif",
-          title: "n-level Nested Comments",
-        },
-        {
-          photoUrl: "../assets/pagination-yt-dev.avif",
-          title: "Pagination in Comments",
+          photoUrl: "https://placehold.co/800x450/0f172a/white?text=Dual+Database+Architecture",
+          title: "Dual Database Architecture",
         },
       ],
     },
-    {
-      id: "netflixAi",
-      name: "Netflix AI",
-      liveUrl: "https://dev-ntflx.netlify.app/",
-      description:
-        "This is a kind of Netflix(responsive) which has feature of AI search powered by OpenAI GPT for intelligent movie recommendations.",
-      techStack: [
-        "React",
-        "Tailwind CSS",
-        "Gemini Ai",
-        "TMDB API",
-      ],
-      category: "AI-Powered Application",
-      duration: "2 weeks",
-      features: [
-        {
-          photoUrl: "../assets/NetflixAi_Ai_Authentication_firebase.avif",
-          title: "Google Firebase Authentication",
-        },
-        {
-          photoUrl: "../assets/NetflixAi_Ai_search.avif",
-          title: "AI-Powered Search",
-        },
-        {
-          photoUrl: "../assets/NetflixAi_pagination.avif",
-          title: "Smooth Pagination",
-        },
-        {
-          photoUrl: "../assets/NetflixAi_movie_search.avif",
-          title: "Movie Search with Debouncing",
-        },
-      ],
-    },
-   
   ];
 
   const projectOpened = projectDetails.find((project) => project.id === id);
@@ -456,7 +422,7 @@ const ProjectDetails = () => {
             {projectOpened.name}
           </h1>
 
-          <div className="flex flex-wrap justify-center gap-6 text-gray-400 mb-8">
+          {/* <div className="flex flex-wrap justify-center gap-6 text-gray-400 mb-8">
             <div className="flex items-center gap-2">
               <svg
                 className="w-5 h-5"
@@ -473,7 +439,7 @@ const ProjectDetails = () => {
               </svg>
               Duration: {projectOpened.duration}
             </div>
-          </div>
+          </div> */}
         </motion.div>
 
         {/* Main Content Card */}
@@ -527,9 +493,9 @@ const ProjectDetails = () => {
                   />
                 </svg>
               </a>
-              <div className="text-gray-400 text-sm text-center sm:text-left">
+              {/* <div className="text-gray-400 text-sm text-center sm:text-left">
                 {projectOpened.liveUrl}
-              </div>
+              </div> */}
             </div>
           </motion.div>
 

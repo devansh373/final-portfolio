@@ -55,7 +55,7 @@ const Navbar = ({
         {/* </span> */}
         <span className=" relative font-playfair   w-[80px] h-[80px] rounded-full  perspective-avatar">
           <img
-            src={"assets/f8ea8427-5542-420f-bfdd-3ba911a6d422.webp"}
+            src={import.meta.env.VITE_AVATAR_URL}
             // src={`assets/${
             //   isHoveredSticker
             //     ? "f8ea8427-5542-420f-bfdd-3ba911a6d422.webp"

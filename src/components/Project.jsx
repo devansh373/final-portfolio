@@ -108,6 +108,7 @@ import { Image, Text } from "@react-three/drei";
 import { useEffect, useRef, useState, useMemo } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 import * as THREE from "three";
+import { givePhotoURL } from "../helper/helper";
 
 export default function Project({camera}) {
   // const { camera } = useThree();
@@ -116,25 +117,25 @@ export default function Project({camera}) {
   const projects = useMemo(
     () => [
       {
-        name: "Youtube Dev",
+        name: "School ID Print System",
         position: [1, -0.7, -80],
         imgPosition: [1, 2.2, -80],
-        url: "youtubeDev",
-        imgUrl: "youtube-dev.webp",
+        url: "schoolIdSystem",
+        imgUrl: givePhotoURL("School ID Print System"),
       },
       {
-        name: "Netflix Ai",
+        name: "Books Store ERP",
         position: [-3, 0.7, -120],
         imgPosition: [-3.2, 3.6, -120],
-        url: "netflixAi",
-        imgUrl: "NetflixAi_Ai_Authentication_firebase.jpg",
+        url: "booksStore",
+        imgUrl: givePhotoURL("Books Store ERP"),
       },
       {
-        name: "Auto Certificate Delivery Workshop",
+        name: "AI Stock Simulator",
         position: [20, 0.7, -160],
         imgPosition: [20, 3.8, -160],
-        url: "autoCertificateDelivery",
-        imgUrl: "dev-WC-homepage.jpg",
+        url: "stockSimulator",
+        imgUrl: givePhotoURL("AI Stock Simulator"),
       },
     ],
     []
@@ -195,7 +196,7 @@ const opacity = THREE.MathUtils.clamp(
 
           {/* Project Image */}
           <Image
-            url={`/assets/${project.imgUrl}`}
+            url={project.imgUrl}
             scale={[7, 4.5, 1]}
             position={[
               project.imgPosition[0] - project.position[0],
